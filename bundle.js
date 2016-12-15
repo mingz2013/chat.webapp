@@ -75,13 +75,13 @@
 
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 
-	__webpack_require__(586);
+	__webpack_require__(587);
 
-	__webpack_require__(590);
+	__webpack_require__(591);
 
-	__webpack_require__(592);
+	__webpack_require__(593);
 
-	__webpack_require__(594);
+	__webpack_require__(595);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23456,6 +23456,7 @@
 	 * Created by zhaojm on 23/09/2016.
 	 */
 	var PAGE_MAIN = exports.PAGE_MAIN = 'page/main';
+	var PAGE_REGISTER = exports.PAGE_REGISTER = 'page/register';
 	var PAGE_LOGIN = exports.PAGE_LOGIN = 'page/login';
 	var PAGE_CHAT = exports.PAGE_CHAT = 'page/chat';
 
@@ -23532,11 +23533,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var enhancer = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default),
-	//DevTools.instrument()
-	window.devToolsExtension ? window.devToolsExtension() : function (f) {
-	    return f;
-	}
+	var enhancer = (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), _DevTools2.default.instrument()
+	//window.devToolsExtension ? window.devToolsExtension() : f => f
 	//persistState(
 	//  window.location.href.match(
 	//    /[?&]debug_session=([^&#]+)\b/
@@ -38406,11 +38404,15 @@
 
 	var _LoginPage2 = _interopRequireDefault(_LoginPage);
 
-	var _MainPage = __webpack_require__(577);
+	var _RegisterPage = __webpack_require__(577);
+
+	var _RegisterPage2 = _interopRequireDefault(_RegisterPage);
+
+	var _MainPage = __webpack_require__(578);
 
 	var _MainPage2 = _interopRequireDefault(_MainPage);
 
-	var _ChatPage = __webpack_require__(582);
+	var _ChatPage = __webpack_require__(583);
 
 	var _ChatPage2 = _interopRequireDefault(_ChatPage);
 
@@ -38446,9 +38448,7 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'height-init' },
-	                page_index == _PageIndex.PAGE_LOGIN ? _react2.default.createElement(_LoginPage2.default, { onLoginClick: function onLoginClick(username, password) {
-	                        return dispatch((0, _index.changePage)(_PageIndex.PAGE_MAIN));
-	                    } }) : page_index == _PageIndex.PAGE_MAIN ? _react2.default.createElement(_MainPage2.default, { dispatch: dispatch, tab_index: tab_index }) : _react2.default.createElement(_ChatPage2.default, { dispatch: dispatch, chat_messages: chat_messages })
+	                page_index == _PageIndex.PAGE_REGISTER ? _react2.default.createElement(_RegisterPage2.default, { dispatch: dispatch }) : page_index == _PageIndex.PAGE_LOGIN ? _react2.default.createElement(_LoginPage2.default, { dispatch: dispatch }) : page_index == _PageIndex.PAGE_MAIN ? _react2.default.createElement(_MainPage2.default, { dispatch: dispatch, tab_index: tab_index }) : _react2.default.createElement(_ChatPage2.default, { dispatch: dispatch, chat_messages: chat_messages })
 	            );
 	        }
 	    }]);
@@ -38504,7 +38504,7 @@
 /* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -38515,6 +38515,10 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _index = __webpack_require__(575);
+
+	var _PageIndex = __webpack_require__(216);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38537,37 +38541,47 @@
 	    }
 
 	    _createClass(LoginPage, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            var _this2 = this;
 
+	            var dispatch = this.props.dispatch;
+
 	            return _react2.default.createElement(
-	                "div",
-	                { className: "login" },
+	                'div',
+	                { className: 'login' },
 	                _react2.default.createElement(
-	                    "h1",
-	                    { className: "login-mane" },
-	                    "Login"
+	                    'h1',
+	                    { className: 'login-mane' },
+	                    'Login'
 	                ),
-	                _react2.default.createElement("input", { type: "text", ref: "username", placeholder: "\u7528\u6237\u540D" }),
-	                _react2.default.createElement("input", { type: "text", ref: "password", placeholder: "\u5BC6\u7801" }),
+	                _react2.default.createElement('input', { type: 'text', ref: 'username', placeholder: '\u7528\u6237\u540D' }),
+	                _react2.default.createElement('input', { type: 'text', ref: 'password', placeholder: '\u5BC6\u7801' }),
 	                _react2.default.createElement(
-	                    "button",
+	                    'a',
+	                    { onClick: function onClick(e) {
+	                            return dispatch((0, _index.changePage)(_PageIndex.PAGE_REGISTER));
+	                        } },
+	                    'Register'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
 	                    { onClick: function onClick(e) {
 	                            return _this2.handleClick(e);
 	                        } },
-	                    "login"
+	                    'Login'
 	                )
 	            );
 	        }
 	    }, {
-	        key: "handleClick",
+	        key: 'handleClick',
 	        value: function handleClick(e) {
 	            var username = this.refs.username;
 	            var username_text = username.value.trim();
 	            var password = this.refs.password;
 	            var password_text = password.value.trim();
-	            this.props.onLoginClick(username_text, password_text);
+	            //this.props.onLoginClick(username_text, password_text);
+	            this.props.dispatch((0, _index.changePage)(_PageIndex.PAGE_MAIN));
 	            //username.value = ''
 	        }
 	    }]);
@@ -38593,19 +38607,114 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _AccountTab = __webpack_require__(578);
+	var _index = __webpack_require__(575);
+
+	var _PageIndex = __webpack_require__(216);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by zhaojm on 23/09/2016.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+	var RegisterPage = function (_Component) {
+	    _inherits(RegisterPage, _Component);
+
+	    function RegisterPage() {
+	        _classCallCheck(this, RegisterPage);
+
+	        return _possibleConstructorReturn(this, (RegisterPage.__proto__ || Object.getPrototypeOf(RegisterPage)).apply(this, arguments));
+	    }
+
+	    _createClass(RegisterPage, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            var dispatch = this.props.dispatch;
+
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'login' },
+	                _react2.default.createElement(
+	                    'h1',
+	                    { className: 'login-mane' },
+	                    'Login'
+	                ),
+	                _react2.default.createElement('input', { type: 'text', ref: 'username', placeholder: '\u7528\u6237\u540D' }),
+	                _react2.default.createElement('input', { type: 'text', ref: 'password', placeholder: '\u5BC6\u7801' }),
+	                _react2.default.createElement('input', { type: 'text', ref: 'password2', placeholder: '\u91CD\u590D\u5BC6\u7801' }),
+	                _react2.default.createElement(
+	                    'a',
+	                    { onClick: function onClick(e) {
+	                            return dispatch((0, _index.changePage)(_PageIndex.PAGE_LOGIN));
+	                        } },
+	                    'Login'
+	                ),
+	                _react2.default.createElement(
+	                    'button',
+	                    { onClick: function onClick(e) {
+	                            return _this2.handleClick(e);
+	                        } },
+	                    'Register'
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick(e) {
+	            var username = this.refs.username;
+	            var username_text = username.value.trim();
+	            var password = this.refs.password;
+	            var password_text = password.value.trim();
+	            var password2 = this.refs.password2;
+	            var password2_text = password2.value.trim();
+	            //this.props.onRegisterClick(username_text, password_text, password2_text);
+	            this.props.dispatch((0, _index.changePage)(_PageIndex.PAGE_MAIN));
+	            //username.value = ''
+	        }
+	    }]);
+
+	    return RegisterPage;
+	}(_react.Component);
+
+	exports.default = RegisterPage;
+
+/***/ },
+/* 578 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _AccountTab = __webpack_require__(579);
 
 	var _AccountTab2 = _interopRequireDefault(_AccountTab);
 
-	var _FriendsListTab = __webpack_require__(579);
+	var _FriendsListTab = __webpack_require__(580);
 
 	var _FriendsListTab2 = _interopRequireDefault(_FriendsListTab);
 
-	var _MessageTab = __webpack_require__(580);
+	var _MessageTab = __webpack_require__(581);
 
 	var _MessageTab2 = _interopRequireDefault(_MessageTab);
 
-	var _BottomTabs = __webpack_require__(581);
+	var _BottomTabs = __webpack_require__(582);
 
 	var _BottomTabs2 = _interopRequireDefault(_BottomTabs);
 
@@ -38636,26 +38745,16 @@
 	    _createClass(MainPage, [{
 	        key: 'render',
 	        value: function render() {
-	            var _this2 = this;
-
-	            var tab_index = this.props.tab_index;
+	            var _props = this.props,
+	                dispatch = _props.dispatch,
+	                tab_index = _props.tab_index;
 
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'main' },
-	                tab_index == _TabIndex.TAB_MESSAGE ? _react2.default.createElement(_MessageTab2.default, null) : tab_index == _TabIndex.TAB_FRIENDS_LIST ? _react2.default.createElement(_FriendsListTab2.default, null) : _react2.default.createElement(_AccountTab2.default, null),
-	                _react2.default.createElement(_BottomTabs2.default, { changeTab: function changeTab(tab) {
-	                        return _this2.changeTab(tab);
-	                    } })
+	                tab_index == _TabIndex.TAB_MESSAGE ? _react2.default.createElement(_MessageTab2.default, { dispatch: dispatch }) : tab_index == _TabIndex.TAB_FRIENDS_LIST ? _react2.default.createElement(_FriendsListTab2.default, { dispatch: dispatch }) : _react2.default.createElement(_AccountTab2.default, { dispatch: dispatch }),
+	                _react2.default.createElement(_BottomTabs2.default, { dispatch: dispatch })
 	            );
-	        }
-	    }, {
-	        key: 'changeTab',
-	        value: function changeTab(tab) {
-	            var dispatch = this.props.dispatch;
-
-	            console.log(tab);
-	            dispatch((0, _index.changeTab)(tab));
 	        }
 	    }]);
 
@@ -38665,7 +38764,7 @@
 	exports.default = MainPage;
 
 /***/ },
-/* 578 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38735,7 +38834,7 @@
 	exports.default = AccountTab;
 
 /***/ },
-/* 579 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38813,7 +38912,7 @@
 	exports.default = FriendsListTab;
 
 /***/ },
-/* 580 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39111,7 +39210,7 @@
 	exports.default = MessageTab;
 
 /***/ },
-/* 581 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39127,6 +39226,8 @@
 	var _react2 = _interopRequireDefault(_react);
 
 	var _TabIndex = __webpack_require__(218);
+
+	var _index = __webpack_require__(575);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39151,7 +39252,7 @@
 	    _createClass(BottomTabs, [{
 	        key: 'render',
 	        value: function render() {
-	            var changeTab = this.props.changeTab;
+	            var dispatch = this.props.dispatch;
 
 	            return _react2.default.createElement(
 	                'div',
@@ -39159,21 +39260,21 @@
 	                _react2.default.createElement(
 	                    'span',
 	                    { onClick: function onClick(e) {
-	                            changeTab(_TabIndex.TAB_MESSAGE);
+	                            dispatch((0, _index.changeTab)(_TabIndex.TAB_MESSAGE));
 	                        } },
 	                    'message'
 	                ),
 	                _react2.default.createElement(
 	                    'span',
 	                    { onClick: function onClick(e) {
-	                            changeTab(_TabIndex.TAB_FRIENDS_LIST);
+	                            dispatch((0, _index.changeTab)(_TabIndex.TAB_FRIENDS_LIST));
 	                        } },
 	                    'friends'
 	                ),
 	                _react2.default.createElement(
 	                    'span',
 	                    { onClick: function onClick(e) {
-	                            changeTab(_TabIndex.TAB_ACCOUNT);
+	                            dispatch((0, _index.changeTab)(_TabIndex.TAB_ACCOUNT));
 	                        } },
 	                    'account'
 	                )
@@ -39187,7 +39288,7 @@
 	exports.default = BottomTabs;
 
 /***/ },
-/* 582 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39202,11 +39303,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ChatMessageList = __webpack_require__(583);
+	var _ChatMessageList = __webpack_require__(584);
 
 	var _ChatMessageList2 = _interopRequireDefault(_ChatMessageList);
 
-	var _SendChatMessage = __webpack_require__(585);
+	var _SendChatMessage = __webpack_require__(586);
 
 	var _SendChatMessage2 = _interopRequireDefault(_SendChatMessage);
 
@@ -39256,7 +39357,7 @@
 	exports.default = ChatPage;
 
 /***/ },
-/* 583 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39273,7 +39374,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ChatMessage = __webpack_require__(584);
+	var _ChatMessage = __webpack_require__(585);
 
 	var _ChatMessage2 = _interopRequireDefault(_ChatMessage);
 
@@ -39316,7 +39417,7 @@
 	exports.default = ChatMessageList;
 
 /***/ },
-/* 584 */
+/* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39370,7 +39471,7 @@
 	exports.default = ChatMessage;
 
 /***/ },
-/* 585 */
+/* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39436,16 +39537,16 @@
 	exports.default = SendChatMessage;
 
 /***/ },
-/* 586 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(587);
+	var content = __webpack_require__(588);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(589)(content, {});
+	var update = __webpack_require__(590)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -39462,10 +39563,10 @@
 	}
 
 /***/ },
-/* 587 */
+/* 588 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(588)();
+	exports = module.exports = __webpack_require__(589)();
 	// imports
 
 
@@ -39476,7 +39577,7 @@
 
 
 /***/ },
-/* 588 */
+/* 589 */
 /***/ function(module, exports) {
 
 	/*
@@ -39532,7 +39633,7 @@
 
 
 /***/ },
-/* 589 */
+/* 590 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -39784,16 +39885,16 @@
 
 
 /***/ },
-/* 590 */
+/* 591 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(591);
+	var content = __webpack_require__(592);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(589)(content, {});
+	var update = __webpack_require__(590)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -39810,10 +39911,10 @@
 	}
 
 /***/ },
-/* 591 */
+/* 592 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(588)();
+	exports = module.exports = __webpack_require__(589)();
 	// imports
 
 
@@ -39824,16 +39925,16 @@
 
 
 /***/ },
-/* 592 */
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(593);
+	var content = __webpack_require__(594);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(589)(content, {});
+	var update = __webpack_require__(590)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -39850,10 +39951,10 @@
 	}
 
 /***/ },
-/* 593 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(588)();
+	exports = module.exports = __webpack_require__(589)();
 	// imports
 
 
@@ -39864,16 +39965,16 @@
 
 
 /***/ },
-/* 594 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(595);
+	var content = __webpack_require__(596);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(589)(content, {});
+	var update = __webpack_require__(590)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -39890,10 +39991,10 @@
 	}
 
 /***/ },
-/* 595 */
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(588)();
+	exports = module.exports = __webpack_require__(589)();
 	// imports
 
 
