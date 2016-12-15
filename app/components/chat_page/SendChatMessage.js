@@ -9,8 +9,8 @@ export default class SendChatMessage extends Component {
         type = 'text'
         ref = 'input' / >
             < button
-        onClick = {(e) =
-    >
+        onClick = {(e)
+    =>
         this.handleClick(e)
     }>
         Add

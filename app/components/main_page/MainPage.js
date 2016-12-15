@@ -34,13 +34,13 @@ export default class MainPage extends Component {
     }
     <
         BottomTabs
-        changeTab = {(tab) =
-    >
+        changeTab = {(tab)
+    =>
         this.changeTab(tab)
     }/>
     </
         div >
-    )
+        )
     }
 
     changeTab(tab) {

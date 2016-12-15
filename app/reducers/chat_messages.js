@@ -5,11 +5,10 @@ export function chat_messages(state = [], action) {
         case SEND_CHAT_MESSAGE:
             return [
                 ...state,
-            {
-                text: action.message
-            }
-        ]
-            ;
+                {
+                    text: action.message
+                }
+            ];
         default:
             return state
     }

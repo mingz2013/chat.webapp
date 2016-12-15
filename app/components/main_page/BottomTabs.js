@@ -12,24 +12,24 @@ export default class BottomTabs extends Component {
             < div
         className = "page-button" >
             < span
-        onClick = {(e) =
-    >
+        onClick = {(e)
+    =>
         {
             changeTab(TAB_MESSAGE)
         }
     }>
         message < / span >
         < span
-        onClick = {(e) =
-    >
+        onClick = {(e)
+    =>
         {
             changeTab(TAB_FRIENDS_LIST)
         }
     }>
         friends < / span >
         < span
-        onClick = {(e) =
-    >
+        onClick = {(e)
+    =>
         {
             changeTab(TAB_ACCOUNT)
         }

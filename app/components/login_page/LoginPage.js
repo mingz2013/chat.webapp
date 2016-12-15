@@ -19,8 +19,8 @@ export default class LoginPage extends Component {
         ref = 'password'
         placeholder = "密码" / >
             < button
-        onClick = {(e) =
-    >
+        onClick = {(e)
+    =>
         this.handleClick(e)
     }>
         login

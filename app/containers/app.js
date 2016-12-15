@@ -16,8 +16,8 @@ class App extends Component {
         className = "height-init" >
         {
             page_index == PAGE_LOGIN ? (
-        < LoginPage onLoginClick = {(username, password) =
-    >
+        < LoginPage onLoginClick = {(username, password)
+    =>
         dispatch(changePage(PAGE_MAIN))
     }/>
     ) :
@@ -39,9 +39,7 @@ class App extends Component {
     }
 }
 
-let mapStateToProps = (state) =
->
-({
+let mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
     chat_messages: state.chat_messages
