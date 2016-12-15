@@ -8,107 +8,57 @@ export default class MessageTab extends Component {
         //const { dispatch, chats } = this.props;
 
         return (
-            < div
-        className = "main-message" >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < div
-        className = "message-item" > 消息提示 < / div >
-            < / div >
-    )
+            <div className="main-message">
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+                    <div className="message-item">消息提示</div>
+            </div>
+        )
     }
 }

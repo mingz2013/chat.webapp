@@ -16,30 +16,20 @@ export default class MainPage extends Component {
 
         const { tab_index } = this.props;
         return (
-            < div
-        className = "main" >
-        {
-            tab_index == TAB_MESSAGE ? (
-        < MessageTab / >
-    ) :
-        (
-            tab_index == TAB_FRIENDS_LIST ? (
-            < FriendsListTab / >
-        )
-    :
-        (
-        < AccountTab / >
-    )
-    )
-    }
-    <
-        BottomTabs
-        changeTab = {(tab)
-    =>
-        this.changeTab(tab)
-    }/>
-    </
-        div >
+            <div className="main">
+                {
+                    tab_index == TAB_MESSAGE ? (
+                        <MessageTab/>
+                    ) : (
+                        tab_index == TAB_FRIENDS_LIST ? (
+                            <FriendsListTab/>
+                        ) : (
+                            <AccountTab/>
+                        )
+                    )
+                }
+                <BottomTabs changeTab={(tab) => this.changeTab(tab)}/>
+            </div>
         )
     }
 

@@ -34,13 +34,11 @@ const store = configureStore();
 
 let rootElement = document.getElementById('app');
 render(
-< Provider
-store = {store} >
-    < div
-className = "height-init" >
-    < App / >
-    < DevTools / >
-    < / div >
-    < / Provider >,
+    <Provider store={store}>
+        <div className="height-init">
+            <App />
+            <DevTools />
+        </div>
+    </Provider>,
     rootElement
 )

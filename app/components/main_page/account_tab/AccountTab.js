@@ -8,27 +8,19 @@ export default class AccountTab extends Component {
         //const { dispatch, chats } = this.props;
 
         return (
-            < div
-        className = "main-account" >
-            < div
-        className = "account-user" >
-            mingz
-            < / div >
-            < div
-        className = "account-group" >
-            < div
-        className = "account-item" > < / div >
-            < div
-        className = "account-item" > < / div >
-            < / div >
-            < div
-        className = "account-group" >
-            < div
-        className = "account-item" > < / div >
-            < div
-        className = "account-item" > < / div >
-            < / div >
-            < / div >
-    )
+            <div className="main-account">
+                <div className="account-user">
+                    mingz
+                </div>
+                <div className="account-group">
+                    <div className="account-item"></div>
+                    <div className="account-item"></div>
+                </div>
+                <div className="account-group">
+                    <div className="account-item"></div>
+                    <div className="account-item"></div>
+                </div>
+            </div>
+        )
     }
 }
