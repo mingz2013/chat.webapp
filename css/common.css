@@ -1,0 +1,69 @@
+/*全局样式*/
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+    border: none;
+    /*list-style: none;*/
+    font-family: OneNikeCurrency, 'TradeGothicW01-BoldCn20 675334', Helvetica, Arial, 'Heiti SC', 'ST Heiti', 华文黑体, 'Microsoft YaHei', 雅黑体, SimHei, 黑体, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #eaeff3;
+}
+
+ul, li {
+    /*list-style-type: none;*/
+}
+
+a, input {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+canvas {
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+input, button, select, textarea {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+hr {
+    border: 0.5px solid #f0f0f0;
+    margin-top: 16px;
+}
+
+/*清除浮动*/
+.clear {
+    zoom: 1;
+}
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+#app {
+    height: 100%;
+}
+
+.height-init {
+    height: 100%;
+}
