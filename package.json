@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm i && webpack --progress --profile --colors --display-error-details --display-cached",
     "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server . -p 8080 -o",
-    "watch": "npm i && webpack -d --watch"
+    "watch": "npm i && webpack -d --watch",
+    "github": "npm run build && cp index.html dist/ && ghp-import -m 'make github' -b gh-pages dist"
   },
   "author": "mingz",
   "license": "ISC",
