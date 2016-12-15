@@ -8,7 +8,7 @@
     "build": "npm i && webpack --progress --profile --colors --display-error-details --display-cached",
     "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server . -p 8080 -o",
     "watch": "npm i && webpack -d --watch",
-    "gh-pages": "npm run build && cp index.html dist/ && ghp-import -m 'make github' -b gh-pages dist -p",
+    "gh-pages": "npm run build && cp static/* dist/ && ghp-import -m 'make github' -b gh-pages dist -p",
     "github": "npm run gh-pages && git add . && git commit -m 'update web site' && git push origin master"
   },
   "author": "mingz",
