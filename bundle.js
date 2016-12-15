@@ -38448,7 +38448,7 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'height-init' },
-	                page_index == _PageIndex.PAGE_REGISTER ? _react2.default.createElement(_RegisterPage2.default, { dispatch: dispatch }) : page_index == _PageIndex.PAGE_LOGIN ? _react2.default.createElement(_LoginPage2.default, { dispatch: dispatch }) : page_index == _PageIndex.PAGE_MAIN ? _react2.default.createElement(_MainPage2.default, { dispatch: dispatch, tab_index: tab_index }) : _react2.default.createElement(_ChatPage2.default, { dispatch: dispatch, chat_messages: chat_messages })
+	                page_index == _PageIndex.PAGE_REGISTER ? _react2.default.createElement(_RegisterPage2.default, { dispatch: dispatch }) : page_index == _PageIndex.PAGE_LOGIN ? _react2.default.createElement(_LoginPage2.default, { dispatch: dispatch }) : page_index == _PageIndex.PAGE_MAIN ? _react2.default.createElement(_MainPage2.default, { dispatch: dispatch, tab_index: tab_index }) : page_index == _PageIndex.PAGE_CHAT ? _react2.default.createElement(_ChatPage2.default, { dispatch: dispatch, chat_messages: chat_messages }) : _react2.default.createElement(_ChatPage2.default, { dispatch: dispatch, chat_messages: chat_messages })
 	            );
 	        }
 	    }]);
