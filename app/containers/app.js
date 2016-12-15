@@ -24,8 +24,11 @@ class App extends Component {
                     page_index == PAGE_MAIN ? (
                         <MainPage dispatch={dispatch} tab_index={tab_index}/>
                     ) : (
+                    page_index == PAGE_CHAT ? (
                         <ChatPage dispatch={dispatch} chat_messages={chat_messages}/>
-                    )))
+                    ): (
+                        <ChatPage dispatch={dispatch} chat_messages={chat_messages}/>
+                    ))))
                 }
             </div>
         )
