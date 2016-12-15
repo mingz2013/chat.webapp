@@ -14,28 +14,22 @@ export default class MainPage extends Component {
 
     render() {
 
-        const { tab_index } = this.props;
+        const { dispatch, tab_index } = this.props;
         return (
             <div className="main">
                 {
                     tab_index == TAB_MESSAGE ? (
-                        <MessageTab/>
+                        <MessageTab dispatch={dispatch}/>
                     ) : (
                         tab_index == TAB_FRIENDS_LIST ? (
-                            <FriendsListTab/>
+                            <FriendsListTab dispatch={dispatch}/>
                         ) : (
-                            <AccountTab/>
+                            <AccountTab dispatch={dispatch}/>
                         )
                     )
                 }
-                <BottomTabs changeTab={(tab) => this.changeTab(tab)}/>
+                <BottomTabs dispatch={dispatch}/>
             </div>
         )
-    }
-
-    changeTab(tab) {
-        const { dispatch } = this.props;
-        console.log(tab);
-        dispatch(changeTab(tab))
     }
 }
