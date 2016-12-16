@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { changePage } from '../actions/index'
 import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../constants/PageIndex'
 
-import RegisterPage from '../components/register_page/RegisterPage'
+import RegisterPage from '../components/RegisterPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,

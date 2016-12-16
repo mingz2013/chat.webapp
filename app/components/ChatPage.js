@@ -3,8 +3,8 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import ChatMessageList from './ChatMessageList'
-import SendChatMessage from './SendChatMessage'
+import ChatMessageList from './message/ChatMessageList'
+import SendChatMessage from './message/SendChatMessage'
 
 export default class ChatPage extends Component {
     render() {

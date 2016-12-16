@@ -4,9 +4,9 @@
 import React, { Component, PropTypes } from 'react'
 
 import { connect } from 'react-redux'
-import {TAB_ACCOUNT, TAB_FRIENDS_LIST, TAB_MESSAGE} from '../constants/TabIndex'
-
-import MainPage from '../components/main_page/MainPage'
+import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../constants/TabIndex'
+import { changeTab } from '../actions/index'
+import MainPage from '../components/MainPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -16,8 +16,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        //onRegisterClick: (username, password, password2) => dispatch(changePage(PAGE_MAIN)),
-        //onLoginClick: (e) => dispatch(changePage(PAGE_LOGIN))
+        onMessageClick: (e) => dispatch(changeTab(TAB_MESSAGE)),
+        onFriendsClick: (e) => dispatch(changeTab(TAB_FRIENDS)),
+        onAccountClick: (e) => dispatch(changeTab(TAB_ACCOUNT))
     }
 };
 

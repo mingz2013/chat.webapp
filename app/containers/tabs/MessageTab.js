@@ -3,9 +3,8 @@
  */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import {sendChatMessage} from '../actions/index'
 
-import ChatPage from '../components/ChatPage'
+import MessageTab from '../../components/tabs/MessageTab'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -19,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatPage)
+export default connect(mapStateToProps, mapDispatchToProps)(MessageTab)

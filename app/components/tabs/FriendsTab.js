@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-export default class FriendsListTab extends Component {
+export default class FriendsTab extends Component {
     render() {
         //const { dispatch, chats } = this.props;
 

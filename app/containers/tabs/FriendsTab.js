@@ -2,10 +2,10 @@
  * Created by zhaojm on 23/09/2016.
  */
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import {sendChatMessage} from '../actions/index'
 
-import ChatPage from '../components/ChatPage'
+import { connect } from 'react-redux'
+
+import FriendsTab from '../../components/tabs/FriendsTab'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -19,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChatPage)
+export default connect(mapStateToProps, mapDispatchToProps)(FriendsTab)
