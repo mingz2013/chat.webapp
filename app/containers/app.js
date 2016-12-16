@@ -5,9 +5,7 @@ import App from '../components/App'
 
 
 const mapStateToProps = (state) => ({
-    page_index: state.page_index,
-    tab_index: state.tab_index,
-    chat_messages: state.chat_messages
+    page_index: state.page_index
 });
 
 //const mapDispatchToProps = (dispatch) => {

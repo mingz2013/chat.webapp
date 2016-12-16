@@ -2,7 +2,7 @@
  * Created by zhaojm on 23/09/2016.
  */
 import React, { Component, PropTypes } from 'react'
-
+import { connect } from 'react-redux'
 import {sendChatMessage} from '../actions/index'
 
 import ChatPage from '../components/chat_page/ChatPage'

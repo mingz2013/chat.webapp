@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-
+import { connect } from 'react-redux'
 import {TAB_ACCOUNT, TAB_FRIENDS_LIST, TAB_MESSAGE} from '../constants/TabIndex'
 
 import MainPage from '../components/main_page/MainPage'

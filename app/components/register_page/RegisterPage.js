@@ -14,10 +14,14 @@ export default class RegisterPage extends Component {
                 <input type='text' ref='password2' placeholder="重复密码"/>
                 <a onClick={onLoginClick}>Login</a>
                 <button
-                    onClick={onRegisterClick(this.refs.username.value.trim(), this.refs.password.value.trim(), this.refs.password2.value.trim())}>
+                    onClick={()=>this.handleClick()}>
                     Register
                 </button>
             </div>
         )
+    }
+
+    handleClick() {
+        this.props.onRegisterClick(this.refs.username.value.trim(), this.refs.password.value.trim(), this.refs.password2.value.trim())
     }
 }

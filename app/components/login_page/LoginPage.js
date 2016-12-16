@@ -12,10 +12,15 @@ export default class LoginPage extends Component {
                 <input type='text' ref='username' placeholder="用户名"/>
                 <input type='text' ref='password' placeholder="密码"/>
                 <a onClick={onRegisterClick}>Register</a>
-                <button onClick={onLoginClick(this.refs.username.value.trim(), this.refs.password.value.trim())}>
+                <button onClick={() => this.handleClick()}>
                     Login
                 </button>
             </div>
         )
     }
+
+    handleClick() {
+        this.props.onLoginClick(this.refs.username.value.trim(), this.refs.password.value.trim())
+    }
+
 }
