@@ -7,19 +7,20 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
 
-const enhancer = compose(
-    applyMiddleware(thunk),
-    DevTools.instrument()
-    //window.devToolsExtension ? window.devToolsExtension() : f => f
-    //persistState(
-    //  window.location.href.match(
-    //    /[?&]debug_session=([^&#]+)\b/
-    //  )
-    //)
-);
-
-export default function configureStore(initialState) {
-    const store = createStore(rootReducer, initialState, enhancer);
+export default function configureStore(preloadedState) {
+    const store = createStore(
+        rootReducer,
+        preloadedState,
+        compose(
+            applyMiddleware(thunk),
+            DevTools.instrument()
+            //window.devToolsExtension ? window.devToolsExtension() : f => f
+            //persistState(
+            //  window.location.href.match(
+            //    /[?&]debug_session=([^&#]+)\b/
+            //  )
+            //)
+        ));
 
     //if (module.hot) {
     //  module.hot.accept('../reducers', () =>

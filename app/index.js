@@ -32,7 +32,6 @@ const store = configureStore();
 
 //const socket = Socket(ws_uri);
 
-let rootElement = document.getElementById('app');
 render(
     <Provider store={store}>
         <div className="height-init">
@@ -40,5 +39,5 @@ render(
             <DevTools />
         </div>
     </Provider>,
-    rootElement
+    document.getElementById('root')
 );

@@ -6,15 +6,13 @@ import React, { Component, PropTypes } from 'react'
 import ChatMessageList from './ChatMessageList'
 import SendChatMessage from './SendChatMessage'
 
-import {sendChatMessage} from '../../actions/index'
-
 export default class ChatPage extends Component {
     render() {
-        const { dispatch, chat_messages } = this.props;
+        const { chat_messages, onSendMessageClick } = this.props;
         return (
             <div className="chat">
                 <ChatMessageList chat_messages={chat_messages}/>
-                <SendChatMessage onSendClick={(message) => dispatch(sendChatMessage(message))}/>
+                <SendChatMessage onSendClick={onSendMessageClick(message)}/>
             </div>
         )
     }
