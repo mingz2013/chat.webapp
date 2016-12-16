@@ -15,27 +15,27 @@ export default class Socket {
         }
 
         if (this.sock) {
-            this.sock.onopen = this.onOpen;
-            this.sock.onclose = this.onClose;
-            this.sock.onmessage = this.onMessage;
-            this.sock.onerror = this.onError;
+            this.sock.onopen = this._onOpen;
+            this.sock.onclose = this._onClose;
+            this.sock.onmessage = this._onMessage;
+            this.sock.onerror = this._onError;
         }
     }
 
-    onOpen(e) {
+    _onOpen(e) {
         console.log("Connected to " + this.ws_uri);
     }
 
-    onClose(e) {
+    _onClose(e) {
         console.log("Connection closed (wasClean = " + e.wasClean + ", code = " + e.code + ", reason = '" + e.reason + "')");
         this.sock = null;
     }
 
-    onMessage(e) {
+    _onMessage(e) {
         this.log("Got echo: " + e.data);
     }
 
-    onError(e) {
+    _onError(e) {
         this.log("on error");
     }
 
