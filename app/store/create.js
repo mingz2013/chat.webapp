@@ -16,6 +16,6 @@ const enhancer = compose(
 
 export default function createStoreWithMiddleware(initialState) {
     //注意：仅仅只有redux>=3.1.0支持第三个参数
-    const store = createStore(rootReducer, initialState, enhancer)
+    const store = createStore(rootReducer, initialState, enhancer);
     return store
 }

@@ -7,7 +7,6 @@ import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../../constants
 
 export default class RegisterPage extends Component {
     render() {
-        const { dispatch } = this.props;
 
         return (
             <div className="login">
@@ -15,7 +14,7 @@ export default class RegisterPage extends Component {
                 <input type='text' ref='username' placeholder="用户名"/>
                 <input type='text' ref='password' placeholder="密码"/>
                 <input type='text' ref='password2' placeholder="重复密码"/>
-                <a onClick={(e) => dispatch(changePage(PAGE_LOGIN))}>Login</a>
+                <a onClick={(e) => store.dispatch(changePage(PAGE_LOGIN))}>Login</a>
                 <button onClick={(e) => this.handleClick(e)}>
                     Register
                 </button>
@@ -31,7 +30,7 @@ export default class RegisterPage extends Component {
         const password2 = this.refs.password2;
         const password2_text = password2.value.trim();
         //this.props.onRegisterClick(username_text, password_text, password2_text);
-        this.props.dispatch(changePage(PAGE_MAIN));
+        store.dispatch(changePage(PAGE_MAIN));
         //username.value = ''
     }
 }

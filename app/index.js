@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
 import App from './containers/App'
 //import rootReducer from './reducers'
-import { createStore, compose } from 'redux'
+//import { createStore, compose } from 'redux'
 //import Socket from './socket/socket'
 //import ws_uri from './constants/config'
 
@@ -41,4 +41,4 @@ render(
         </div>
     </Provider>,
     rootElement
-)
+);

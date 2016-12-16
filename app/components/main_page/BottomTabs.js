@@ -7,13 +7,11 @@ import { changeTab } from '../../actions/index'
 
 export default class BottomTabs extends Component {
     render() {
-
-        const { dispatch } = this.props;
         return (
             <div className="page-button">
-                <span onClick={(e) => {dispatch(changeTab(TAB_MESSAGE))}}>message</span>
-                <span onClick={(e) => {dispatch(changeTab(TAB_FRIENDS_LIST))}}>friends</span>
-                <span onClick={(e) => {dispatch(changeTab(TAB_ACCOUNT))}}>account</span>
+                <span onClick={(e) => {store.dispatch(changeTab(TAB_MESSAGE))}}>message</span>
+                <span onClick={(e) => {store.dispatch(changeTab(TAB_FRIENDS_LIST))}}>friends</span>
+                <span onClick={(e) => {store.dispatch(changeTab(TAB_ACCOUNT))}}>account</span>
             </div>
         )
     }

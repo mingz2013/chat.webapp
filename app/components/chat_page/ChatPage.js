@@ -14,7 +14,7 @@ export default class ChatPage extends Component {
         return (
             <div className="chat">
                 <ChatMessageList chat_messages={chat_messages}/>
-                <SendChatMessage onSendClick={message => dispatch(sendChatMessage(message))}/>
+                <SendChatMessage onSendClick={(message) => dispatch(sendChatMessage(message))}/>
             </div>
         )
     }
