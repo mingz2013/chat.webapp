@@ -3,7 +3,7 @@
  */
 import BasePacket from './BasePacket'
 
-class LoginPacket extends BasePacket {
+export default class LoginPacket extends BasePacket {
 
     constructor(username, password) {
         let cmd = "login";
@@ -15,4 +15,3 @@ class LoginPacket extends BasePacket {
     }
 }
 
-export default LoginPacket;

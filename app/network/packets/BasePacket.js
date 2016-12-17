@@ -1,7 +1,7 @@
 /**
  * Created by zhaojm on 17/12/2016.
  */
-class BasePacket {
+export default class BasePacket {
 
     constructor(cmd, data) {
         this.cmd = cmd;
@@ -18,4 +18,3 @@ class BasePacket {
 
 }
 
-export default BasePacket;

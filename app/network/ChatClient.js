@@ -8,7 +8,7 @@ import {ws_uri} from '../constants/config'
 
 import LoginPacket from './packets/LoginPacket'
 
-class ChatClient {
+export default class ChatClient {
     constructor() {
         this.socketClient = new SocketClient(ws_uri);
     }
@@ -25,4 +25,3 @@ class ChatClient {
 
 }
 
-export default ChatClient;

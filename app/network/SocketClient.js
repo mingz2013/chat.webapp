@@ -1,7 +1,7 @@
 /**
  * Created by zhaojm on 07/10/2016.
  */
-class SocketClient {
+export default class SocketClient {
 
     constructor(ws_uri) {
         this.ws_uri = ws_uri;
@@ -58,4 +58,3 @@ class SocketClient {
     }
 }
 
-export default SocketClient;
