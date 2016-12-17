@@ -16,10 +16,10 @@ export default class SocketClient {
         }
 
         if (this.socket) {
-            this.socket.onopen = this._onOpen;
-            this.socket.onclose = this._onClose;
-            this.socket.onmessage = this._onMessage;
-            this.socket.onerror = this._onError;
+            this.socket.onopen = this._onOpen.bind(this);
+            this.socket.onclose = this._onClose.bind(this);
+            this.socket.onmessage = this._onMessage.bind(this);
+            this.socket.onerror = this._onError.bind(this);
         }
     }
 
