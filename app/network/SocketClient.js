@@ -23,9 +23,10 @@ export default class SocketClient {
         }
     }
 
+
     _onOpen(e) {
         console.log(e);
-        console.log("Connected to " + e.currentTarget.url);
+        console.log("Connected to " + this.ws_uri);
     }
 
     _onClose(e) {
@@ -35,6 +36,7 @@ export default class SocketClient {
     }
 
     _onMessage(e) {
+        console.log(e);
         console.log("Got echo: " + e.data);
     }
 

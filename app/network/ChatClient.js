@@ -13,6 +13,20 @@ export default class ChatClient {
         this.socketClient = new SocketClient(ws_uri);
     }
 
+    onReceiveMessage(message) {
+
+    }
+
+    onLogin() {
+
+    }
+
+    onLogout() {
+
+    }
+
+
+
     closeConnect() {
         this.socketClient.closeConnect();
         //this.sockClient = null;
@@ -22,6 +36,18 @@ export default class ChatClient {
         let packet = new LoginPacket(username, password);
         this.socketClient.sendPacket(packet);
     }
+
+    logout() {
+
+    }
+
+    sendMessage(sendto, message) {
+
+    }
+
+
+
+
 
 }
 
