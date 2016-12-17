@@ -3,7 +3,14 @@
  */
 import React, { Component, PropTypes } from 'react'
 
+
 export default class RegisterPage extends Component {
+
+    constructor(props, context) {
+        super(props, context);
+
+    }
+
     render() {
         const {onLoginClick, onRegisterClick} = this.props;
         return (

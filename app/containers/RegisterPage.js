@@ -8,6 +8,7 @@ import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../constants/Pa
 
 import RegisterPage from '../components/RegisterPage'
 
+
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
@@ -16,8 +17,13 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onRegisterClick: (username, password, password2) => dispatch(changePage(PAGE_MAIN)),
-        onLoginClick: (e) => dispatch(changePage(PAGE_LOGIN))
+        onRegisterClick: (username, password, password2) => {
+
+            dispatch(changePage(PAGE_MAIN))
+        },
+        onLoginClick: (e) => {
+            dispatch(changePage(PAGE_LOGIN))
+        }
     }
 };
 

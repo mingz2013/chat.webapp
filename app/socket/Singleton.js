@@ -12,7 +12,7 @@ const Singleton = (function () {
         //const io = require('socket.io-client')
         //const socket = io.connect();
         //return socket;
-        const socket = Socket(ws_uri);
+        const socket = new Socket(ws_uri);
         return socket;
     }
 
