@@ -3,7 +3,7 @@
  */
 
 import Socket from './Socket'
-import ws_uri from '../constants/config'
+import {ws_uri} from '../constants/config'
 
 const Singleton = (function () {
     let instance;
@@ -12,6 +12,7 @@ const Singleton = (function () {
         //const io = require('socket.io-client')
         //const socket = io.connect();
         //return socket;
+        //console.log(ws_uri);
         const socket = new Socket(ws_uri);
         return socket;
     }

@@ -20,10 +20,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onLoginClick: (username, password) => {
             const socket = Singleton.getInstance();
-            socket.send({
+            socket.send(JSON.stringify({
                 "username": username,
                 "password": password
-            });
+            }));
             //dispatch(changePage(PAGE_MAIN))
         },
         onRegisterClick: (e) => dispatch(changePage(PAGE_REGISTER))
