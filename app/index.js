@@ -7,7 +7,7 @@ import App from './containers/App'
 //import { createStore, compose } from 'redux'
 //import Socket from './socket/socket'
 //import ws_uri from './constants/config'
-import Singleton from './socket/Singleton'
+import Singleton from './network/Singleton'
 
 //import createStoreWithMiddleware from './store/create'
 
@@ -31,7 +31,7 @@ import '../css/main.css'
 //const store = createStore(rootReducer);
 const store = configureStore();
 
-const socket = Singleton.getInstance();
+let chatClient = Singleton.getInstance();
 
 render(
     <Provider store={store}>

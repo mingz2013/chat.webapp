@@ -8,7 +8,7 @@ import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../constants/Pa
 
 import LoginPage from '../components/LoginPage'
 
-import Singleton from '../socket/Singleton'
+import Singleton from '../network/Singleton'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -19,11 +19,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
     return {
         onLoginClick: (username, password) => {
-            const socket = Singleton.getInstance();
-            socket.send(JSON.stringify({
-                "username": username,
-                "password": password
-            }));
+            let chatClient = Singleton.getInstance();
+            chatClient.login(username, password);
             //dispatch(changePage(PAGE_MAIN))
         },
         onRegisterClick: (e) => dispatch(changePage(PAGE_REGISTER))
