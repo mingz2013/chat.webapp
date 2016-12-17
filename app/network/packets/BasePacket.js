@@ -7,13 +7,14 @@ import Packet from './Packet'
 export default class BasePacket extends Packet {
 
     constructor(cmd, data) {
-        this.cmd = cmd;
-        this.data = data;
+
         let packet = {
-            "cmd": this.cmd,
-            "data": this.data
+            "cmd": cmd,
+            "data": data
         };
         super(packet);
+        this.cmd = cmd;
+        this.data = data;
     }
 }
 
