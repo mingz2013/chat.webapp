@@ -1,24 +1,26 @@
 /**
  * Created by zhaojm on 07/10/2016.
  */
-
-import io from 'socket.io-client'
-
 export default class SocketClient {
 
     constructor(ws_uri) {
         this.ws_uri = ws_uri;
         //this.ws_uri = "ws://127.0.0.1:8080/ws_chat";
         console.log(this.ws_uri);
-        const socket = io.connect("ws://localhost:9000");
-        socket.on('connect', function () {
-        });
-        socket.on('event', function (data) {
-        });
-        socket.on('disconnect', function () {
-        });
-        this.socket = socket;
+        if ("WebSocket" in window) {
+            this.socket = new WebSocket(this.ws_uri);
+        } else if ("MozWebSocket" in window) {
+            this.socket = new MozWebSocket(this.ws_uri);
+        } else {
+            console.log("Browser does not support WebSocket!");
+        }
 
+        if (this.socket) {
+            this.socket.onopen = this._onOpen.bind(this);
+            this.socket.onclose = this._onClose.bind(this);
+            this.socket.onmessage = this._onMessage.bind(this);
+            this.socket.onerror = this._onError.bind(this);
+        }
     }
 
 
