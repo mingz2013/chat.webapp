@@ -5,8 +5,7 @@ import configureStore from './store/configureStore'
 import App from './containers/App'
 //import rootReducer from './reducers'
 //import { createStore, compose } from 'redux'
-//import Socket from './socket/socket'
-//import ws_uri from './constants/config'
+
 import Singleton from './network/Singleton'
 
 //import createStoreWithMiddleware from './store/create'
