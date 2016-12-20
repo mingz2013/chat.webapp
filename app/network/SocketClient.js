@@ -12,7 +12,7 @@ export default class SocketClient {
         console.log(this.ws_uri);
         const socket = io.connect(this.ws_uri);
         socket.on('connect', this._onConnect.bind(this));
-        socket.on('event', this._onEvent.bind(this));
+        //socket.on('event', this._onEvent.bind(this));
         socket.on('disconnect', this._onDisconnect.bind(this));
         this.socket = socket;
 
@@ -24,13 +24,13 @@ export default class SocketClient {
         console.log("Connected to " + this.ws_uri);
     }
 
-    _onEvent(data) {
-        console.log(data);
-        console.log("Got echo: " + data);
-    }
+    //_onEvent(data) {
+    //    console.log(data);
+    //    console.log("Got echo: " + data);
+    //}
 
     _onDisconnect(e) {
-        console.log("Connection closed (wasClean = " + e.wasClean + ", code = " + e.code + ", reason = '" + e.reason + "')");
+        console.log(e);
         this.socket.close();
         //this.sock = null;
     }
@@ -39,8 +39,10 @@ export default class SocketClient {
         this.socket.on(ev, fn);
     }
 
-    emit() {
-        this.socket.emit()
+    sendPacket(packet) {
+        console.log("sendPacket->");
+        console.log(packet);
+        this.socket.emit(packet.as_json());
     }
 }
 
