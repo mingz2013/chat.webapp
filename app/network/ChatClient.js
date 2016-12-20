@@ -4,11 +4,13 @@
 
 
 import {ws_uri} from '../constants/config'
+import SocketClient from './SocketClient'
 
 import LoginPacket from './packets/LoginPacket'
 
 export default class ChatClient {
     constructor() {
+        this.socketClient = new SocketClient(ws_uri);
 
     }
 
