@@ -44,5 +44,11 @@ export default class SocketClient {
         console.log(packet);
         this.socket.emit(packet.as_json());
     }
+
+    emit(type, packet) {
+        console.log("emit:->");
+        console.log(packet.packet);
+        this.socket.emit(type, packet.packet);
+    }
 }
 

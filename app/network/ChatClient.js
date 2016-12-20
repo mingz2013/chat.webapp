@@ -14,10 +14,11 @@ export default class ChatClient {
         this.socketClient.on("receiveMessage", this.onReceiveMessage.bind(this));
         this.socketClient.on("login", this.onLogin.bind(this));
         this.socketClient.on("logout", this.onLogout.bind(this));
+        this.socketClient.on("my_response", this.onReceiveMessage.bind(this));
     }
 
     onReceiveMessage(message) {
-
+        console.log(message);
     }
 
     onLogin() {
@@ -37,7 +38,7 @@ export default class ChatClient {
 
     login(username, password) {
         let packet = new LoginPacket(username, password);
-        this.socketClient.sendPacket(packet);
+        this.socketClient.emit("login", packet);
     }
 
     logout() {
