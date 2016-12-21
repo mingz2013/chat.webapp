@@ -9,7 +9,7 @@ export default class BasePacket extends Packet {
     constructor(cmd, data, auth) {
 
         let packet = {
-            //"cmd": cmd,
+            "cmd": cmd,
             "data": data,
             "auth": auth
         };

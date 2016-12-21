@@ -8,8 +8,8 @@ export default class Packet {
         this.packet = packet;
     }
 
-    as_json() {
-        return JSON.stringify(this.packet);
-    }
+    //as_json() {
+    //    return JSON.stringify(this.packet);
+    //}
 
 }

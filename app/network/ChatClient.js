@@ -8,6 +8,7 @@ import SocketClient from './SocketClient'
 
 import LoginPacket from './packets/LoginPacket'
 import SignInPacket from './packets/SignInPacket'
+import RegisterPacket from './packets/RegisterPacket'
 
 export default class ChatClient {
     constructor() {
@@ -22,6 +23,26 @@ export default class ChatClient {
         this.socketClient.on("my_response", this.onResponse.bind(this));
 
     }
+
+    signIn(auth) {
+        let packet = new SignInPacket(auth);
+        this.socketClient.sendPacket(packet);
+    };
+
+    bindOnSignIn(fn) {
+        this.socketClient.on('signin', fn);
+    };
+
+    register(auth, username, password) {
+        let packet = new RegisterPacket(auth, username, password);
+        this.socketClient.sendPacket(packet);
+    };
+
+    bindOnRegister(fn) {
+        this.socketClient.on('register', fn);
+    };
+
+
 
     onResponse(data) {
         console.log(data);
@@ -44,15 +65,6 @@ export default class ChatClient {
     //onLogout() {
     //
     //}
-
-    signIn(auth) {
-        let packet = new SignInPacket(auth);
-        this.socketClient.sendPacket(packet);
-    };
-
-    bindSignIn(fn) {
-        this.socketClient.on('signin', fn);
-    }
 
 
     closeConnect() {

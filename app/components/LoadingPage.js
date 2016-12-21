@@ -3,6 +3,8 @@
  */
 
 import React, { Component, PropTypes } from 'react'
+import chatClient from '../network/Singleton'
+
 export default class LoadingPage extends Component {
 
     constructor(props, context) {
@@ -11,8 +13,19 @@ export default class LoadingPage extends Component {
     }
 
     componentDidMount() {
-        const { auth, onMount } = this.props;
-        onMount(auth);
+        const { auth, gotoLoginPage, gotoMainPage } = this.props;
+        chatClient.connect();
+        chatClient.bindOnSignIn(this.onSignIn.bind(this));
+        if (!auth.token) {
+            gotoLoginPage();
+        } else {
+            chatClient.signIn(auth);
+        }
+    }
+
+    onSignIn(data) {
+        console.log(data);
+
     }
 
     render() {

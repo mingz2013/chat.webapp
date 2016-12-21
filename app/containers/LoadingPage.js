@@ -8,7 +8,7 @@ import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../constants/Pa
 
 import LoadingPage from '../components/LoadingPage'
 
-import chatClient from '../network/Singleton'
+
 
 const mapStateToProps = (state) => ({
     auth: state.auth,
@@ -19,17 +19,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onMount: (auth) => {
-            chatClient.bindSignIn(this.onSignIn.bind(this));
-            chatClient.connect();
-            if (!auth.token) {
-                dispatch(changePage(PAGE_LOGIN));
-            } else {
-                chatClient.signIn(auth);
-            }
-        },
 
-        onSignIn: (data) => {
+        gotoLoginPage: () => {
+            dispatch(changePage(PAGE_LOGIN));
+        },
+        gotoMainPage: () => {
 
         },
 
