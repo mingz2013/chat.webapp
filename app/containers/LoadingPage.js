@@ -1,12 +1,12 @@
 /**
- * Created by zhaojm on 23/09/2016.
+ * Created by zhaojm on 21/12/2016.
  */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { changePage } from '../actions/index'
 import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../constants/PageIndex'
 
-import LoginPage from '../components/LoginPage'
+import LoadingPage from '../components/LoadingPage'
 
 import chatClient from '../network/Singleton'
 
@@ -18,13 +18,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLoginClick: (username, password) => {
-            //let chatClient = Singleton.getInstance();
-            chatClient.login(username, password);
-            //dispatch(changePage(PAGE_MAIN))
+        onMount: () => {
+            chatClient.connect();
         },
-        onRegisterClick: (e) => dispatch(changePage(PAGE_REGISTER))
+
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(LoadingPage)

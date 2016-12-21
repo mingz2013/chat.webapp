@@ -5,3 +5,4 @@ export const PAGE_MAIN = 'page/main';
 export const PAGE_REGISTER = 'page/register';
 export const PAGE_LOGIN = 'page/login';
 export const PAGE_CHAT = 'page/chat';
+export const PAGE_LOADING = 'page/loading';

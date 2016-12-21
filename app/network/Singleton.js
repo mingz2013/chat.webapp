@@ -22,6 +22,6 @@ const Singleton = (function () {
     };
 })();
 
-//const chatClient = Singleton.getInstance();
+const chatClient = Singleton.getInstance();
 
-export default Singleton;
+export default chatClient;

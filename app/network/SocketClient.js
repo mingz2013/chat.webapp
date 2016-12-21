@@ -22,6 +22,7 @@ export default class SocketClient {
     _onConnect(e) {
         console.log(e);
         console.log("Connected to " + this.ws_uri);
+        //this.socket.request
     }
 
     //_onEvent(data) {
@@ -39,11 +40,11 @@ export default class SocketClient {
         this.socket.on(ev, fn);
     }
 
-    sendPacket(packet) {
-        console.log("sendPacket->");
-        console.log(packet);
-        this.socket.emit(packet.as_json());
-    }
+    //sendPacket(packet) {
+    //    console.log("sendPacket->");
+    //    console.log(packet);
+    //    this.socket.emit(packet.as_json());
+    //}
 
     emit(type, packet) {
         console.log("emit:->");
