@@ -5,13 +5,13 @@ import BasePacket from './BasePacket'
 
 export default class LoginPacket extends BasePacket {
 
-    constructor(username, password) {
+    constructor(auth, username, password) {
         let cmd = "login";
         let data = {
             "username": username,
             "password": password
         };
-        super(cmd, data);
+        super(cmd, data, auth);
     }
 }
 

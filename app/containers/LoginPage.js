@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { changePage } from '../actions/index'
+import { changePage, updateAuth } from '../actions/index'
 import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../constants/PageIndex'
 
 import LoginPage from '../components/LoginPage'
@@ -18,12 +18,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLoginClick: (username, password) => {
-            //let chatClient = Singleton.getInstance();
-            chatClient.login(username, password);
-            //dispatch(changePage(PAGE_MAIN))
-        },
-        onRegisterClick: (e) => dispatch(changePage(PAGE_REGISTER))
+        gotoMainPage: () => dispatch(changePage(PAGE_MAIN)),
+        gotoRegisterPage: (e) => dispatch(changePage(PAGE_REGISTER)),
+        updateAuthFunc: (auth) => dispatch(updateAuth(auth))
     }
 };
 

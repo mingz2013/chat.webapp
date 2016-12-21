@@ -42,6 +42,15 @@ export default class ChatClient {
         this.socketClient.on('register', fn);
     };
 
+    login(auth, username, password) {
+        let packet = new LoginPacket(auth, username, password);
+        this.socketClient.sendPacket(packet);
+    };
+
+    bindOnLogin(fn) {
+        this.socketClient.on('login', fn);
+    };
+
 
 
     onResponse(data) {
@@ -72,10 +81,6 @@ export default class ChatClient {
         //this.sockClient = null;
     }
 
-    login(username, password) {
-        let packet = new LoginPacket(username, password);
-        this.socketClient.emit("login", packet);
-    }
 
     logout() {
 
