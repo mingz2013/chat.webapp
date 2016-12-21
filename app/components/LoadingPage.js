@@ -11,14 +11,14 @@ export default class LoadingPage extends Component {
     }
 
     componentDidMount() {
-        const { onMount } = this.props;
-        onMount();
+        const { auth, onMount } = this.props;
+        onMount(auth);
     }
 
     render() {
 
         return (
-            <div onLoad={ () => this.handleOnLoad() }>
+            <div>
                 Loading...
             </div>
         )

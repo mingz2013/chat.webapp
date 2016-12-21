@@ -3,7 +3,8 @@
  */
 export default class Packet {
 
-    constructor(packet) {
+    constructor(cmd, packet) {
+        this.cmd = cmd;
         this.packet = packet;
     }
 

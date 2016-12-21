@@ -7,6 +7,7 @@ import {ws_uri} from '../constants/config'
 import SocketClient from './SocketClient'
 
 import LoginPacket from './packets/LoginPacket'
+import SignInPacket from './packets/SignInPacket'
 
 export default class ChatClient {
     constructor() {
@@ -15,24 +16,42 @@ export default class ChatClient {
 
     connect() {
         this.socketClient = new SocketClient(ws_uri);
-        this.socketClient.on("receiveMessage", this.onReceiveMessage.bind(this));
-        this.socketClient.on("login", this.onLogin.bind(this));
-        this.socketClient.on("logout", this.onLogout.bind(this));
-        this.socketClient.on("my_response", this.onReceiveMessage.bind(this));
-    }
-
-
-
-    onReceiveMessage(message) {
-        console.log(message);
-    }
-
-    onLogin() {
+        //this.socketClient.on("receiveMessage", this.onReceiveMessage.bind(this));
+        //this.socketClient.on("login", this.onLogin.bind(this));
+        //this.socketClient.on("logout", this.onLogout.bind(this));
+        this.socketClient.on("my_response", this.onResponse.bind(this));
 
     }
 
-    onLogout() {
+    onResponse(data) {
+        console.log(data);
+    }
 
+    //
+    //onheartbeat(data){
+    //    console.log(data);
+    //}
+
+
+    //onReceiveMessage(message) {
+    //    console.log(message);
+    //}
+    //
+    //onLogin() {
+    //
+    //}
+    //
+    //onLogout() {
+    //
+    //}
+
+    signIn(auth) {
+        let packet = new SignInPacket(auth);
+        this.socketClient.sendPacket(packet);
+    };
+
+    bindSignIn(fn) {
+        this.socketClient.on('signin', fn);
     }
 
 

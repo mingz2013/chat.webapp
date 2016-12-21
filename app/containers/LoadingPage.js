@@ -11,6 +11,7 @@ import LoadingPage from '../components/LoadingPage'
 import chatClient from '../network/Singleton'
 
 const mapStateToProps = (state) => ({
+    auth: state.auth,
     page_index: state.page_index,
     tab_index: state.tab_index,
     chat_messages: state.chat_messages
@@ -18,9 +19,21 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onMount: () => {
+        onMount: (auth) => {
+            chatClient.bindSignIn(this.onSignIn.bind(this));
             chatClient.connect();
+            if (!auth.token) {
+                dispatch(changePage(PAGE_LOGIN));
+            } else {
+                chatClient.signIn(auth);
+            }
         },
+
+        onSignIn: (data) => {
+
+        },
+
+
 
     }
 };
