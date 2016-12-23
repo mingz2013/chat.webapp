@@ -52,7 +52,8 @@ export default class SocketClient {
     sendPacket(packet) {
         console.log("sendPacket->");
         console.log(packet);
-        this.socket.emit(packet.cmd, packet.packet);
+        //this.socket.emit(packet.cmd, packet.packet);
+        this.socket.send(packet.packet);
     }
 
     //emit(type, packet) {
