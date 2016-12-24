@@ -17,10 +17,10 @@ export default class SocketClient {
             this.socket.on('message', this._onMessage.bind(this));
             this.socket.on('close', this._onClose.bind(this));
 
-            this.socket.send(JSON.stringify({
-                "cmd": "login",
-                "data": "hello"
-            }));
+            //this.socket.send(JSON.stringify({
+            //    "cmd": "login",
+            //    "data": "hello"
+            //}));
         }.bind(this));
 
     }
@@ -41,7 +41,7 @@ export default class SocketClient {
         console.log("sendPacket->");
         console.log(packet);
         //this.socket.emit(packet.cmd, packet.packet);
-        this.socket.send(packet.packet);
+        this.socket.send(packet.as_json());
     }
 
 }

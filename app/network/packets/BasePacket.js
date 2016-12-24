@@ -18,5 +18,7 @@ export default class BasePacket extends Packet {
         //this.data = data;
         //this.auth = auth;
     }
+
+
 }
 
