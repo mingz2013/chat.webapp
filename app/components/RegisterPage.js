@@ -2,7 +2,8 @@
  * Created by zhaojm on 23/09/2016.
  */
 import React, { Component, PropTypes } from 'react'
-import chatClient from '../network/Singleton'
+import chatClient from '../network/ChatClient'
+import eventDispatcher from '../network/EventDispatcher'
 
 export default class RegisterPage extends Component {
 
@@ -12,7 +13,7 @@ export default class RegisterPage extends Component {
     }
 
     componentDidMount() {
-        chatClient.bindOnRegister(this.onRegister.bind(this));
+        eventDispatcher.addListener('register', this.onRegister.bind(this));
     }
 
     onRegister(data) {

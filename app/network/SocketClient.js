@@ -3,6 +3,7 @@
  */
 
 import eio from 'engine.io-client'
+import eventDispatcher from './EventDispatcher'
 
 export default class SocketClient {
 
@@ -12,8 +13,9 @@ export default class SocketClient {
         //this.ws_uri = "ws://127.0.0.1:8080/ws_chat";
         console.log(this.ws_uri);
         this.socket = eio(this.ws_uri);
-        this.socket.on('open', function () {
+        this.socket.on('open', function (e) {
             console.log("on open...");
+            console.log(e);
             this.socket.on('message', this._onMessage.bind(this));
             this.socket.on('close', this._onClose.bind(this));
 
@@ -21,20 +23,26 @@ export default class SocketClient {
             //    "cmd": "login",
             //    "data": "hello"
             //}));
+            eventDispatcher.dispatchEvent('open', e);
         }.bind(this));
 
     }
 
 
-    _onMessage(data) {
+    _onMessage(message) {
         console.log("on message...");
-        console.log(data);
+        console.log(message);
+        let cmd = message['cmd'];
+        let data = message['data'];
+
+        eventDispatcher.dispatchEvent(cmd, data);
     }
 
 
     _onClose(e) {
         console.log("on close...");
         console.log(e);
+        eventDispatcher.dispatchEvent('close', e);
     }
 
     sendPacket(packet) {

@@ -2,12 +2,13 @@
  * Created by zhaojm on 23/09/2016.
  */
 import React, { Component, PropTypes } from 'react'
-import chatClient from '../network/Singleton'
+import chatClient from '../network/ChatClient'
+import eventDispatcher from '../network/EventDispatcher'
 
 export default class LoginPage extends Component {
 
     componentDidMount() {
-        chatClient.bindOnLogin(this.onLogin.bind(this));
+        eventDispatcher.addListener('login', this.onLogin.bind(this));
     }
 
     onLogin(data) {

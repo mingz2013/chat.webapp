@@ -31,4 +31,4 @@ class EventDispatcher {
     }
 }
 
-export default EventDispatcher();
+export default new EventDispatcher();

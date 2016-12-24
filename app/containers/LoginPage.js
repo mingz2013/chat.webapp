@@ -8,7 +8,6 @@ import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER } from '../constants/Pa
 
 import LoginPage from '../components/LoginPage'
 
-import chatClient from '../network/Singleton'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
