@@ -3,7 +3,7 @@
  */
 
 import React, { Component, PropTypes } from 'react'
-import chatClient from '../network/Singleton'
+import chatClient from '../network/ChatClient'
 
 export default class LoadingPage extends Component {
 

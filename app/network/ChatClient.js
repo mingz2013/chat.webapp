@@ -10,7 +10,7 @@ import LoginPacket from './packets/LoginPacket'
 import SignInPacket from './packets/SignInPacket'
 import RegisterPacket from './packets/RegisterPacket'
 
-export default class ChatClient {
+class ChatClient {
     constructor() {
         this.socketClient = null;
     }
@@ -95,4 +95,6 @@ export default class ChatClient {
 
 
 }
+
+export default ChatClient();
 
