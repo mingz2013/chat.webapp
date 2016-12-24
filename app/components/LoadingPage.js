@@ -15,12 +15,12 @@ export default class LoadingPage extends Component {
     componentDidMount() {
         const { auth, gotoLoginPage, gotoMainPage } = this.props;
         chatClient.connect();
-        chatClient.bindOnSignIn(this.onSignIn.bind(this));
-        if (!auth.token) {
-            gotoLoginPage();
-        } else {
-            chatClient.signIn(auth);
-        }
+        //chatClient.bindOnSignIn(this.onSignIn.bind(this));
+        //if (!auth.token) {
+        //    gotoLoginPage();
+        //} else {
+        //    chatClient.signIn(auth);
+        //}
     }
 
     onSignIn(data) {
