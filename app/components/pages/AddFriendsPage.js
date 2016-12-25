@@ -21,6 +21,7 @@ export default class AddFriendsPage extends Component {
     }
 
     onUserList(data) {
+        console.log(data);
         const {updateUserListFunc} = this.props;
         console.log(data);
         if (data.retcode == 0) {

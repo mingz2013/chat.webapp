@@ -18,7 +18,14 @@ export default class FriendsInfoPage extends Component {
     }
 
     onUserInfo(data) {
+        const {updateFriendsInfoFunc} = this.props;
         console.log(data);
+        if (data.retcode == 0) {
+            let user = data.result;
+            updateFriendsInfoFunc(user);
+        } else {
+            console.log("on user info error code");
+        }
     }
 
     render() {

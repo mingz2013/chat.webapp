@@ -9,7 +9,7 @@ const initialState = [];
 export function user_list(state = initialState, action) {
     switch (action.type) {
         case UPDATE_USERLIST:
-            return state;
+            return action.user_list;
         default:
             return state
     }

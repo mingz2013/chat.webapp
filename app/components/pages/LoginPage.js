@@ -30,7 +30,8 @@ export default class LoginPage extends Component {
                 <h1 className="login-mane">Login</h1>
                 <input type='text' ref='username' placeholder="用户名"/>
                 <input type='text' ref='password' placeholder="密码"/>
-                <a onClick={gotoRegisterPage}>Register</a>
+                <a onClick={gotoRegisterPage}>Register</a><br/>
+                <span ref="errmsg"></span>
                 <button onClick={() => this.handleClick()}>
                     Login
                 </button>

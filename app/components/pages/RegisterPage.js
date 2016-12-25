@@ -33,7 +33,7 @@ export default class RegisterPage extends Component {
         const {gotoLoginPage, gotoMainPage } = this.props;
         return (
             <div className="login">
-                <h1 className="login-mane">Login</h1>
+                <h1 className="login-mane">Register</h1>
                 <input type='text' ref='username' placeholder="用户名"/>
                 <input type='text' ref='password' placeholder="密码"/>
                 <input type='text' ref='password2' placeholder="重复密码"/>

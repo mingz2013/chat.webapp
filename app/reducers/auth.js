@@ -11,7 +11,7 @@ const initialState = {
 export function auth(state = initialState, action) {
     switch (action.type) {
         case UPDATE_AUTH:
-            return state;
+            return action.auth;
         default:
             return state
     }

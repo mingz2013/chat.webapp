@@ -19,7 +19,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSendMessageClick: (message) => dispatch(sendChatMessage(message)),
+        updateFriendsInfoFunc: (friends) => dispatch(updateFriendsInfo(friends))
 
     }
 };

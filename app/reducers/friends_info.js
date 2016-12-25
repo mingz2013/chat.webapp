@@ -9,7 +9,7 @@ const initialState = [];
 export function friends_info(state = initialState, action) {
     switch (action.type) {
         case UPDATE_FRIENDSINFO:
-            return state;
+            return action.friends_info;
         default:
             return state
     }

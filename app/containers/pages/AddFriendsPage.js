@@ -4,7 +4,7 @@
 
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import {updateUserList, updateFriendsInfo} from '../../actions/index'
+import {changePage, updateUserList, updateFriendsInfo} from '../../actions/index'
 import {PAGE_FRIENDSINFO} from '../../constants/PageIndex'
 
 import AddFriendsPage from '../../components/pages/AddFriendsPage'
