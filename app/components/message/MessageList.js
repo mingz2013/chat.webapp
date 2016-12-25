@@ -14,14 +14,14 @@ export default class MessageList extends Component {
 
     }
     render() {
-
+        const {messages} = this.props;
         return (
             <div className="main-message">
-                {this.props.messages.map((message, index) =>
-                    <Message {...message}
-                        key={index}
-                    />
-                )}
+                {
+                    messages.map((message, index) =>
+                        <Message message={message} key={index}/>
+                    )
+                }
             </div>
         )
     }

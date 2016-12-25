@@ -13,8 +13,9 @@ export default class Message extends Component {
 
     }
     render() {
+        const {message, key} = this.props;
         return (
-            <div className="message-item">消息</div>
+            <div className="message-item">{message.text}</div>
         )
     }
 }

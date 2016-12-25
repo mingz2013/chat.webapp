@@ -1,12 +1,12 @@
 /**
- * Created by zhaojm on 21/12/2016.
+ * Created by zhaojm on 25/12/2016.
  */
 import BasePacket from './BasePacket'
 
-export default class SignInPacket extends BasePacket {
+export default class GetAllUsersPacket extends BasePacket {
 
     constructor(auth) {
-        let cmd = "signin";
+        let cmd = "get_all_users";
         let data = {};
         super(cmd, data, auth);
     }

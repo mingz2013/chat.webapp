@@ -15,9 +15,9 @@ export default class Friends extends Component {
     }
 
     render() {
-        //const { messages, onSendMessageClick } = this.props;
+        const { friends } = this.props;
         return (
-            <div className="friends-item">好友分组</div>
+            <div className="friends-item">{friends.username}</div>
         )
     }
 }

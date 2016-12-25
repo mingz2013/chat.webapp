@@ -7,7 +7,6 @@ import {ws_uri} from '../constants/config'
 import SocketClient from './SocketClient'
 
 import LoginPacket from './packets/LoginPacket'
-import SignInPacket from './packets/SignInPacket'
 import RegisterPacket from './packets/RegisterPacket'
 
 import eventDispatcher from './EventDispatcher'
@@ -51,19 +50,23 @@ class ChatClient {
         this.socketClient.sendPacket(packet);
     };
 
-
-    closeConnect() {
-        this.socketClient.closeConnect();
-        //this.sockClient = null;
-    }
-
-    logout() {
+    get_all_users(auth) {
 
     }
 
-    sendMessage(sendto, message) {
 
-    }
+    //closeConnect() {
+    //    this.socketClient.closeConnect();
+    //    //this.sockClient = null;
+    //}
+    //
+    //logout() {
+    //
+    //}
+    //
+    //sendMessage(sendto, message) {
+    //
+    //}
 
 }
 
