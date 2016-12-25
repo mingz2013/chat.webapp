@@ -7,6 +7,14 @@ import ChatMessageList from './message/ChatMessageList'
 import SendChatMessage from './message/SendChatMessage'
 
 export default class ChatPage extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+    }
+
+    componentDidMount() {
+
+    }
     render() {
         const { chat_messages, onSendMessageClick } = this.props;
         return (

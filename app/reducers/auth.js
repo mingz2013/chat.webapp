@@ -3,7 +3,12 @@
  */
 import { UPDATE_AUTH } from '../constants/ActionTypes'
 
-export function auth(state = {}, action) {
+
+const initialState = {
+    "token": null,
+};
+
+export function auth(state = initialState, action) {
     switch (action.type) {
         case UPDATE_AUTH:
             return state;

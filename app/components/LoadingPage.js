@@ -16,17 +16,11 @@ export default class LoadingPage extends Component {
     componentDidMount() {
         const { auth, gotoLoginPage, gotoMainPage } = this.props;
         chatClient.connect();
-        eventDispatcher.addListener('signin', this.onSignIn.bind(this));
         if (!auth.token) {
             gotoLoginPage();
         } else {
-            chatClient.signIn(auth);
+            gotoMainPage();
         }
-    }
-
-    onSignIn(data) {
-        console.log(data);
-
     }
 
     render() {

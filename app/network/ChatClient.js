@@ -34,10 +34,10 @@ class ChatClient {
         console.log(e);
     }
 
-    signIn(auth) {
-        let packet = new SignInPacket(auth);
-        this.socketClient.sendPacket(packet);
-    };
+    //signIn(auth) {
+    //    let packet = new SignInPacket(auth);
+    //    this.socketClient.sendPacket(packet);
+    //};
 
     register(auth, username, password) {
         let packet = new RegisterPacket(auth, username, password);

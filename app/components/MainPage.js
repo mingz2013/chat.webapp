@@ -11,6 +11,14 @@ import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../constants/TabIndex'
 
 
 export default class MainPage extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+    }
+
+    componentDidMount() {
+
+    }
 
     render() {
 

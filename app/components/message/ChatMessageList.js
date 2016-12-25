@@ -2,6 +2,14 @@ import React, { Component, PropTypes } from 'react'
 import ChatMessage from './ChatMessage'
 
 export default class ChatMessageList extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+    }
+
+    componentDidMount() {
+
+    }
     render() {
 
         return (

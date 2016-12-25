@@ -4,6 +4,14 @@
 import React, { Component, PropTypes } from 'react'
 
 export default class MessageTab extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+    }
+
+    componentDidMount() {
+
+    }
     render() {
         //const { dispatch, chats } = this.props;
 

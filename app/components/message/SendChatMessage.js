@@ -1,6 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 
 export default class SendChatMessage extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+    }
+
+    componentDidMount() {
+
+    }
     render() {
         return (
             <div className="chat-send">
