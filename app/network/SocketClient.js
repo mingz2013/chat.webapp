@@ -9,7 +9,7 @@ export default class SocketClient {
 
     constructor(ws_uri) {
         this.ws_uri = ws_uri;
-        this.ws_uri = 'ws://127.0.0.1:5000';
+        //this.ws_uri = 'ws://127.0.0.1:5000';
         //this.ws_uri = "ws://127.0.0.1:8080/ws_chat";
         console.log(this.ws_uri);
         this.socket = eio(this.ws_uri);
