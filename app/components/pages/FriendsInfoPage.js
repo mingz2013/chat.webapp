@@ -30,10 +30,15 @@ export default class FriendsInfoPage extends Component {
                 </div>
 
                 <div className="account-group">
-                    <div className="account-item">add</div>
+                    <div className="account-item" onClick={this.onAddFriendsClick}>add</div>
                 </div>
 
             </div>
         )
+    }
+
+    onAddFriendsClick() {
+        const {auth, friends_info} = this.props;
+        chatClient.friends_add(auth, friends_info.username);
     }
 }

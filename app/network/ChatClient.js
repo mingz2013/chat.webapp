@@ -10,6 +10,8 @@ import LoginPacket from './packets/LoginPacket'
 import RegisterPacket from './packets/RegisterPacket'
 import UserListPacket from './packets/UserListPacket'
 import UserInfoPacket from './packets/UserInfoPacket'
+import FriendsAddPacket from './packets/FriendsAddPacket'
+
 import eventDispatcher from './EventDispatcher'
 
 class ChatClient {
@@ -57,6 +59,11 @@ class ChatClient {
     }
 
     user_info(auth, username) {
+        let packet = new UserInfoPacket(auth, username);
+        this.socketClient.sendPacket(packet);
+    }
+
+    friends_add(auth, username) {
         let packet = new UserInfoPacket(auth, username);
         this.socketClient.sendPacket(packet);
     }
