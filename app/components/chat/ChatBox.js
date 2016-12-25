@@ -1,10 +1,10 @@
 /**
- * Created by zhaojm on 23/09/2016.
+ * Created by zhaojm on 25/12/2016.
  */
 import React, { Component, PropTypes } from 'react'
-import Message from './Message'
+import ChatMessage from './ChatMessage'
 
-export default class MessageList extends Component {
+export default class ChatBox extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -13,16 +13,17 @@ export default class MessageList extends Component {
     componentDidMount() {
 
     }
+
     render() {
 
         return (
-            <div className="main-message">
+            <ul className="chat-box">
                 {this.props.messages.map((message, index) =>
-                    <Message {...message}
+                    <ChatMessage {...message}
                         key={index}
                     />
                 )}
-            </div>
+            </ul>
         )
     }
 }

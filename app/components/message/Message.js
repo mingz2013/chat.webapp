@@ -1,6 +1,9 @@
+/**
+ * Created by zhaojm on 23/09/2016.
+ */
 import React, { Component, PropTypes } from 'react'
 
-export default class ChatMessage extends Component {
+export default class Message extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -11,12 +14,7 @@ export default class ChatMessage extends Component {
     }
     render() {
         return (
-            <li className="chat-message clear">
-                <img className="fr" src="" alt=""/>
-                <div className="fr">
-                    {this.props.text}
-                </div>
-            </li>
+            <div className="message-item">消息</div>
         )
     }
 }

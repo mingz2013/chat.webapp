@@ -3,8 +3,8 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import MessageList from '../message/MessageList'
-import SendMessage from '../message/SendMessage'
+import ChatBox from '../chat/ChatBox'
+import SendChatMessage from '../chat/SendChatMessage'
 
 export default class ChatPage extends Component {
     constructor(props, context) {
@@ -19,8 +19,8 @@ export default class ChatPage extends Component {
         const { messages, onSendMessageClick } = this.props;
         return (
             <div className="chat">
-                <MessageList messages={messages}/>
-                <SendMessage onSendClick={onSendMessageClick(message)}/>
+                <ChatBox messages={messages}/>
+                <SendChatMessage onSendClick={onSendMessageClick(message)}/>
             </div>
         )
     }
