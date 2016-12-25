@@ -13,7 +13,8 @@ const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
     messages: state.messages,
-    friends_info: state.friends_info
+    friends_info: state.friends_info,
+    auth: state.auth
 });
 
 const mapDispatchToProps = (dispatch) => {
