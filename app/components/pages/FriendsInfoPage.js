@@ -4,7 +4,7 @@
 import React, { Component, PropTypes } from 'react'
 
 
-export default class FriendsInfo extends Component {
+export default class FriendsInfoPage extends Component {
     constructor(props, context) {
         super(props, context);
 
