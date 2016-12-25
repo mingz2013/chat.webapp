@@ -10,7 +10,7 @@ import FriendsTab from '../../components/tabs/FriendsTab'
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
-    chat_messages: state.chat_messages
+    messages: state.messages
 });
 
 const mapDispatchToProps = (dispatch) => {

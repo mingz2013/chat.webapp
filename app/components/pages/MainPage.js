@@ -3,11 +3,11 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import AccountTab from '../containers/tabs/AccountTab'
-import FriendsTab from '../containers/tabs/FriendsTab'
-import MessageTab from '../containers/tabs/MessageTab'
+import AccountTab from '../../containers/tabs/AccountTab'
+import FriendsTab from '../../containers/tabs/FriendsTab'
+import MessageTab from '../../containers/tabs/MessageTab'
 
-import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../constants/TabIndex'
+import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../../constants/TabIndex'
 
 
 export default class MainPage extends Component {

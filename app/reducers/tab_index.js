@@ -1,7 +1,7 @@
 import { CHANGE_TAB } from '../constants/ActionTypes'
-import { TAB_MESSAGE } from '../constants/TabIndex'
+import { TAB_MESSAGE, TAB_FRIENDS } from '../constants/TabIndex'
 
-const initialState = TAB_MESSAGE;
+const initialState = TAB_FRIENDS;
 
 export function tab_index(state = initialState, action) {
     switch (action.type) {

@@ -2,11 +2,11 @@
  * Created by zhaojm on 16/12/2016.
  */
 import React, { Component, PropTypes } from 'react'
-import LoginPage from '../containers/LoginPage'
-import RegisterPage from '../containers/RegisterPage'
-import MainPage from '../containers/MainPage'
-import ChatPage from '../containers/ChatPage'
-import LoadingPage from '../containers/LoadingPage'
+import LoginPage from '../containers/pages/LoginPage'
+import RegisterPage from '../containers/pages/RegisterPage'
+import MainPage from '../containers/pages/MainPage'
+import ChatPage from '../containers/pages/ChatPage'
+import LoadingPage from '../containers/pages/LoadingPage'
 
 import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING } from '../constants/PageIndex'
 

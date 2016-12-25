@@ -3,8 +3,8 @@
  */
 
 import React, { Component, PropTypes } from 'react'
-import chatClient from '../network/ChatClient'
-import eventDispatcher from '../network/EventDispatcher'
+import chatClient from '../../network/ChatClient'
+import eventDispatcher from '../../network/EventDispatcher'
 
 export default class LoadingPage extends Component {
 

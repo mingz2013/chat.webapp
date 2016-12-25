@@ -17,6 +17,7 @@ export default class FriendsTab extends Component {
 
         return (
             <div className="main-friends">
+                <button>new friends</button>
                 <div className="friends-item">好友分组</div>
                 <div className="friends-item">好友分组</div>
                 <div className="friends-item">好友分组</div>

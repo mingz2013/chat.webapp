@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import ChatMessage from './ChatMessage'
+import Message from './Message'
 
 export default class ChatMessageList extends Component {
     constructor(props, context) {
@@ -14,8 +14,8 @@ export default class ChatMessageList extends Component {
 
         return (
             <ul className="chat-box">
-                {this.props.chat_messages.map((message, index) =>
-                    <ChatMessage {...message}
+                {this.props.messages.map((message, index) =>
+                    <Message {...message}
                         key={index}
                     />
                 )}

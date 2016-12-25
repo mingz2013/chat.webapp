@@ -4,14 +4,14 @@
 import React, { Component, PropTypes } from 'react'
 
 import { connect } from 'react-redux'
-import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../constants/TabIndex'
-import { changeTab } from '../actions/index'
-import MainPage from '../components/MainPage'
+import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../../constants/TabIndex'
+import { changeTab } from '../../actions/index'
+import MainPage from '../../components/pages/MainPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
-    chat_messages: state.chat_messages
+    messages: state.messages
 });
 
 const mapDispatchToProps = (dispatch) => {

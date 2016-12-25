@@ -3,14 +3,14 @@
  */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import {sendChatMessage} from '../actions/index'
+import {sendChatMessage} from '../../actions/index'
 
-import ChatPage from '../components/ChatPage'
+import ChatPage from '../../components/pages/ChatPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
-    chat_messages: state.chat_messages
+    messages: state.messages
 });
 
 const mapDispatchToProps = (dispatch) => {
