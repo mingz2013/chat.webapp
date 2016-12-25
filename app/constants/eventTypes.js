@@ -10,5 +10,8 @@ const E_LOGIN = 'login';
 const E_REGISTER = 'register';
 const E_SIGNIN = 'signin';
 
+
 // message event
 const E_M_CHAT = 'chat';
+
+
