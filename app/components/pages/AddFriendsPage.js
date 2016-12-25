@@ -15,27 +15,27 @@ export default class AddFriendsPage extends Component {
 
     componentDidMount() {
         const { auth } = this.props;
-        eventDispatcher.addListener('get_all_users', this.onGetAllUsers.bind(this));
-        chatClient.get_all_users(auth)
+        eventDispatcher.addListener('user_list', this.onUserList.bind(this));
+        chatClient.user_list(auth)
 
     }
 
-    onGetAllUsers(data) {
-        const {updateAllUsersFunc} = this.props;
+    onUserList(data) {
+        const {updateUserListFunc} = this.props;
         console.log(data);
         if (data.retcode == 0) {
-            let all_users = data.result;
-            updateAllUsersFunc(all_users);
+            let user_list = data.result;
+            updateUserListFunc(user_list);
         } else {
             console.log("error on get all users");
         }
     }
 
     render() {
-        const { all_users } = this.props;
+        const { user_list } = this.props;
         return (
             <div className="chat">
-                <FriendsList friends_list={all_users}/>
+                <FriendsList friends_list={user_list}/>
             </div>
         )
     }

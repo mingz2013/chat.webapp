@@ -4,7 +4,7 @@
 
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import {updateAllUsers} from '../../actions/index'
+import {updateUserList} from '../../actions/index'
 
 import AddFriendsPage from '../../components/pages/AddFriendsPage'
 
@@ -12,12 +12,13 @@ const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
     messages: state.messages,
-    auth: state.auth
+    auth: state.auth,
+    user_list: state.user_list
 });
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateAllUsersFunc: (all_users) => dispatch(updateAllUsers(all_users))
+        updateUserListFunc: (user_list) => dispatch(updateUserList(user_list))
     }
 };
 

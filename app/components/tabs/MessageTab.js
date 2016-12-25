@@ -15,10 +15,10 @@ export default class MessageTab extends Component {
 
     }
     render() {
-        //const { dispatch, chats } = this.props;
+        const { messages } = this.props;
 
         return (
-            <MessageList/>
+            <MessageList messages={messages}/>
         )
     }
 }

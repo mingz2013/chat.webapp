@@ -13,7 +13,8 @@ import {PAGE_ADDFRIENDS} from '../../constants/PageIndex'
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
-    messages: state.messages
+    messages: state.messages,
+    friends_list: state.friends_list
 });
 
 const mapDispatchToProps = (dispatch) => {

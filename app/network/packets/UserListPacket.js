@@ -3,10 +3,10 @@
  */
 import BasePacket from './BasePacket'
 
-export default class GetAllUsersPacket extends BasePacket {
+export default class UserListPacket extends BasePacket {
 
     constructor(auth) {
-        let cmd = "get_all_users";
+        let cmd = "user_list";
         let data = {};
         super(cmd, data, auth);
     }
