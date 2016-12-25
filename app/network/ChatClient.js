@@ -41,6 +41,15 @@ class ChatClient {
     _onHeartbeat(data) {
         console.log("on heartbeat");
         console.log(data);
+        if (data.retcode == 0) {
+            let messages = data.result;
+            messages.forEach(function (message) {
+                eventDispatcher.dispatchEvent(message.type, message);
+            });
+
+        } else {
+            console.log("heartbeat error")
+        }
     }
 
     register(auth, username, password) {
