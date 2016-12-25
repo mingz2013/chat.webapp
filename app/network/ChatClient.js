@@ -22,6 +22,8 @@ class ChatClient {
         this.socketClient = new SocketClient(ws_uri);
         eventDispatcher.addListener('open', this._onConnected.bind(this));
         eventDispatcher.addListener('close', this._onDisconnected.bind(this));
+
+        eventDispatcher.addListener('heartbeat', this._onHeartbeat.bind(this));
     }
 
     _onConnected(e) {
@@ -34,10 +36,10 @@ class ChatClient {
         console.log(e);
     }
 
-    //signIn(auth) {
-    //    let packet = new SignInPacket(auth);
-    //    this.socketClient.sendPacket(packet);
-    //};
+    _onHeartbeat(data) {
+        console.log("on heartbeat");
+        console.log(data);
+    }
 
     register(auth, username, password) {
         let packet = new RegisterPacket(auth, username, password);
