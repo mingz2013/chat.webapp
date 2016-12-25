@@ -36,9 +36,7 @@ export default class FriendsInfoPage extends Component {
                     {friends_info.username}
                 </div>
 
-                <div className="account-group">
-                    <div className="account-item" onClick={this.onAddFriendsClick}>add</div>
-                </div>
+                <button onClick={this.onAddFriendsClick.bind(this)}>add</button>
 
             </div>
         )
