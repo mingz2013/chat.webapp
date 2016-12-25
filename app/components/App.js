@@ -12,7 +12,37 @@ import FriendsInfoPage from '../containers/pages/FriendsInfoPage'
 
 import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING, PAGE_ADDFRIENDS, PAGE_FRIENDSINFO } from '../constants/PageIndex'
 
+
+import chatClient from '../network/ChatClient'
+import eventDispatcher from '../network/EventDispatcher'
+
 export default class App extends Component {
+
+    constructor(props, context) {
+        super(props, context);
+
+    }
+
+    componentDidMount() {
+        const { auth } = this.props;
+
+        // 在这里注册heartbeat的message type事件, 要用app的dispatch 去更新state
+        eventDispatcher.addListener('chat', this.onChat.bind(this));
+
+    }
+
+    onChat(data) {
+        console.log(data);
+    }
+
+
+
+
+
+
+
+
+
     render() {
         const { page_index } = this.props;
 
