@@ -27,6 +27,7 @@ export default class App extends Component {
         const { auth } = this.props;
 
         // 在这里注册heartbeat的message type事件, 要用app的dispatch 去更新state
+        // TODO 看一下middleware怎么用,最好写到中间件里
         eventDispatcher.addListener('chat', this.onChat.bind(this));
 
     }
