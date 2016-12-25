@@ -9,6 +9,7 @@ import SocketClient from './SocketClient'
 import LoginPacket from './packets/LoginPacket'
 import RegisterPacket from './packets/RegisterPacket'
 import UserListPacket from './packets/UserListPacket'
+import UserInfoPacket from './packets/UserInfoPacket'
 import eventDispatcher from './EventDispatcher'
 
 class ChatClient {
@@ -52,6 +53,11 @@ class ChatClient {
 
     user_list(auth) {
         let packet = new UserListPacket(auth);
+        this.socketClient.sendPacket(packet);
+    }
+
+    user_info(auth, username) {
+        let packet = new UserInfoPacket(auth, username);
         this.socketClient.sendPacket(packet);
     }
 

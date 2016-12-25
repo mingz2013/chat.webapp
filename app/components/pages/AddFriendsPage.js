@@ -32,10 +32,10 @@ export default class AddFriendsPage extends Component {
     }
 
     render() {
-        const { user_list } = this.props;
+        const { user_list, gotoFriendsInfoPage } = this.props;
         return (
             <div className="chat">
-                <FriendsList friends_list={user_list}/>
+                <FriendsList friends_list={user_list} gotoFriendsInfoPage={gotoFriendsInfoPage}/>
             </div>
         )
     }

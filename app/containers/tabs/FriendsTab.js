@@ -7,8 +7,8 @@ import { connect } from 'react-redux'
 
 import FriendsTab from '../../components/tabs/FriendsTab'
 
-import {changePage} from '../../actions/index'
-import {PAGE_ADDFRIENDS} from '../../constants/PageIndex'
+import {changePage, updateFriendsInfo} from '../../actions/index'
+import {PAGE_ADDFRIENDS, PAGE_FRIENDSINFO} from '../../constants/PageIndex'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -19,7 +19,11 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        gotoAddFriendsPage: () => dispatch(changePage(PAGE_ADDFRIENDS))
+        gotoAddFriendsPage: () => dispatch(changePage(PAGE_ADDFRIENDS)),
+        gotoFriendsInfoPage: (friends) => {
+            dispatch(updateFriendsInfo(friends));
+            dispatch(changePage(PAGE_FRIENDSINFO));
+        }
     }
 };
 

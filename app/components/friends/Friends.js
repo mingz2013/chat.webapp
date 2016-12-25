@@ -17,7 +17,12 @@ export default class Friends extends Component {
     render() {
         const { friends } = this.props;
         return (
-            <div className="friends-item">{friends.username}</div>
+            <div className="friends-item" onclick={this.onFriendsClick}>{friends.username}</div>
         )
+    }
+
+    onFriendsClick() {
+        const { friends, gotoFriendsInfoPage } = this.props;
+        gotoFriendsInfoPage(friends);
     }
 }

@@ -1,4 +1,4 @@
-import { CHANGE_PAGE, CHANGE_TAB, SEND_CHAT_MESSAGE, UPDATE_AUTH, UPDATE_USERLIST, UPDATE_FRIENDSLIST } from '../constants/ActionTypes'
+import { CHANGE_PAGE, CHANGE_TAB, SEND_CHAT_MESSAGE, UPDATE_AUTH, UPDATE_USERLIST, UPDATE_FRIENDSLIST, UPDATE_FRIENDSINFO } from '../constants/ActionTypes'
 
 export const sendChatMessage = (message) => ({
     type: SEND_CHAT_MESSAGE,
@@ -29,3 +29,9 @@ export const updateFriendsList = (friends_list) => ({
     type: UPDATE_FRIENDSLIST,
     friends_list
 });
+
+export const updateFriendsInfo = (friends_info) => ({
+    type: UPDATE_FRIENDSINFO,
+    friends_info
+});
+

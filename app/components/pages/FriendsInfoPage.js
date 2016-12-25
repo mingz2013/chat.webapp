@@ -2,7 +2,8 @@
  * Created by zhaojm on 25/12/2016.
  */
 import React, { Component, PropTypes } from 'react'
-
+import chatClient from '../../network/ChatClient'
+import eventDispatcher from '../../network/EventDispatcher'
 
 export default class FriendsInfoPage extends Component {
     constructor(props, context) {
@@ -11,26 +12,26 @@ export default class FriendsInfoPage extends Component {
     }
 
     componentDidMount() {
+        const {auth, friends_info} = this.props;
+        eventDispatcher.addListener('user_info', this.onUserInfo.bind(this));
+        chatClient.user_info(auth, friends_info.username);
+    }
 
+    onUserInfo(data) {
+        console.log(data);
     }
 
     render() {
-        //const { messages, onSendMessageClick } = this.props;
+        const {auth, friends_info} = this.props;
         return (
             <div className="main-account">
                 <div className="account-user">
-                    mingz
-                </div>
-                <div className="account-group">
-                    <div className="account-item"></div>
-                    <div className="account-item"></div>
-                </div>
-                <div className="account-group">
-                    <div className="account-item"></div>
-                    <div className="account-item"></div>
+                    {friends_info.username}
                 </div>
 
-
+                <div className="account-group">
+                    <div className="account-item">add</div>
+                </div>
 
             </div>
         )

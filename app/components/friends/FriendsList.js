@@ -16,12 +16,12 @@ export default class FriendsList extends Component {
     }
 
     render() {
-        const { friends_list } = this.props;
+        const { friends_list, gotoFriendsInfoPage } = this.props;
         return (
             <div className="chat">
                 {
                     friends_list.map((friends, index) =>
-                        <Friends friends={friends} key={index}/>
+                        <Friends friends={friends} key={index} gotoFriendsInfoPage={gotoFriendsInfoPage}/>
                     )
                 }
             </div>
