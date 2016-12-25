@@ -32,8 +32,10 @@ export default class SocketClient {
     _onMessage(message) {
         console.log("on message...");
         console.log(message);
-        let cmd = message['cmd'];
-        let data = message['data'];
+        let jsonObj = JSON.parse(message);
+        console.log(jsonObj);
+        let cmd = jsonObj['cmd'];
+        let data = jsonObj['data'];
 
         eventDispatcher.dispatchEvent(cmd, data);
     }

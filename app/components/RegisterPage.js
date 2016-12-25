@@ -13,6 +13,7 @@ export default class RegisterPage extends Component {
     }
 
     componentDidMount() {
+        console.log("register page did mount");
         eventDispatcher.addListener('register', this.onRegister.bind(this));
     }
 
