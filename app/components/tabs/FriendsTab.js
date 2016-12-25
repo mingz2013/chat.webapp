@@ -3,6 +3,8 @@
  */
 import React, { Component, PropTypes } from 'react'
 
+import FriendsList from '../friends/FriendsList'
+
 export default class FriendsTab extends Component {
     constructor(props, context) {
         super(props, context);
@@ -13,18 +15,18 @@ export default class FriendsTab extends Component {
 
     }
     render() {
-        //const { dispatch, chats } = this.props;
+        const { gotoAddFriendsPage } = this.props;
 
         return (
             <div className="main-friends">
-                <div className="friends-item">new friends</div>
-                <div className="friends-item">好友分组</div>
-                <div className="friends-item">好友分组</div>
-                <div className="friends-item">好友分组</div>
-                <div className="friends-item">好友分组</div>
-                <div className="friends-item">好友分组</div>
-
+                <div className="friends-item" onClick={gotoAddFriendsPage}>new friends</div>
+                <FriendsList/>
             </div>
         )
+    }
+
+    onNewFriendsClick(e) {
+
+
     }
 }

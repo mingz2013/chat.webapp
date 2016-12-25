@@ -4,7 +4,7 @@
 import React, { Component, PropTypes } from 'react'
 
 
-export default class Friends extends Component {
+export default class FriendsInfo extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -17,7 +17,9 @@ export default class Friends extends Component {
     render() {
         //const { messages, onSendMessageClick } = this.props;
         return (
-            <div className="friends-item">好友分组</div>
+            <div className="chat">
+
+            </div>
         )
     }
 }

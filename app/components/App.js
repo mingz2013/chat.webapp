@@ -7,8 +7,9 @@ import RegisterPage from '../containers/pages/RegisterPage'
 import MainPage from '../containers/pages/MainPage'
 import ChatPage from '../containers/pages/ChatPage'
 import LoadingPage from '../containers/pages/LoadingPage'
+import AddFriendsPage from '../containers/pages/AddFriendsPage'
 
-import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING } from '../constants/PageIndex'
+import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING, PAGE_ADDFRIENDS } from '../constants/PageIndex'
 
 export default class App extends Component {
     render() {
@@ -32,8 +33,11 @@ export default class App extends Component {
                                 page_index == PAGE_CHAT ? (
                                     <ChatPage/>
                                 ) : (
+                                    page_index == PAGE_ADDFRIENDS ? (
+                                        <AddFriendsPage/>
+                                    ) : (
                                     <ChatPage/>
-                                )))))
+                                    ))))))
                 }
             </div>
         )
