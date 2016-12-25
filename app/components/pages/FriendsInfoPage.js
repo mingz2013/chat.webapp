@@ -17,7 +17,20 @@ export default class FriendsInfoPage extends Component {
     render() {
         //const { messages, onSendMessageClick } = this.props;
         return (
-            <div className="chat">
+            <div className="main-account">
+                <div className="account-user">
+                    mingz
+                </div>
+                <div className="account-group">
+                    <div className="account-item"></div>
+                    <div className="account-item"></div>
+                </div>
+                <div className="account-group">
+                    <div className="account-item"></div>
+                    <div className="account-item"></div>
+                </div>
+
+
 
             </div>
         )
