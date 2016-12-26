@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import ContactsTab from '../../components/tabs/ContactsTab'
 
 import {changePage, updateUserInfo} from '../../actions/index'
-import {PAGE_USERLIST, PAGE_PROFILE} from '../../constants/PageIndex'
+import {PAGE_SEARCH, PAGE_PROFILE} from '../../constants/PageIndex'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -20,7 +20,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        gotoAddFriendsPage: () => dispatch(changePage(PAGE_USERLIST)),
+        gotoSearchPage: () => dispatch(changePage(PAGE_SEARCH)),
         gotoProfilePage: (user) => {
             dispatch(updateUserInfo(user));
             dispatch(changePage(PAGE_PROFILE));

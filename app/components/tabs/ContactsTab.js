@@ -15,13 +15,13 @@ export default class ContactsTab extends Component {
 
     }
     render() {
-        const { user_list, gotoAddFriendsPage, gotoProfilePage } = this.props;
+        const { user_list, gotoSearchPage, gotoProfilePage } = this.props;
 
         return (
             <div className="main-friends">
                 <div>
                     <span>Contacts</span>
-                    <button onClick={gotoAddFriendsPage}>Add</button>
+                    <button onClick={gotoSearchPage}>Search</button>
                 </div>
                 <div className="chat">
                     {

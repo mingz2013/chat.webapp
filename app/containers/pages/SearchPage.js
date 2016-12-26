@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import {changePage, updateUserList, updateUserInfo} from '../../actions/index'
 import {PAGE_PROFILE, PAGE_MAIN} from '../../constants/PageIndex'
 
-import UserListPage from '../../components/pages/UserListPage'
+import SearchPage from '../../components/pages/SearchPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserListPage)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage)

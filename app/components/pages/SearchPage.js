@@ -7,7 +7,7 @@ import UserItem from '../common/UserItem'
 import chatClient from '../../network/ChatClient'
 import eventDispatcher from '../../network/EventDispatcher'
 
-export default class UserListPage extends Component {
+export default class SearchPage extends Component {
     constructor(props, context) {
         super(props, context);
 

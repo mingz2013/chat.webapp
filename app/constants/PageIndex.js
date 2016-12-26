@@ -6,5 +6,5 @@ export const PAGE_REGISTER = 'page/register';
 export const PAGE_LOGIN = 'page/login';
 export const PAGE_CHAT = 'page/chat';
 export const PAGE_LOADING = 'page/loading';
-export const PAGE_USERLIST = 'page/userlist';
+export const PAGE_SEARCH = 'page/search';
 export const PAGE_PROFILE = 'page/profile';
