@@ -5,7 +5,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import {changePage, updateUserList, updateUserInfo} from '../../actions/index'
-import {PAGE_USERINFO, PAGE_MAIN} from '../../constants/PageIndex'
+import {PAGE_PROFILE, PAGE_MAIN} from '../../constants/PageIndex'
 
 import UserListPage from '../../components/pages/UserListPage'
 
@@ -20,9 +20,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
     return {
         updateUserListFunc: (user_list) => dispatch(updateUserList(user_list)),
-        gotoUserInfoPage: (user) => {
+        gotoProfilePage: (user) => {
             dispatch(updateUserInfo(user));
-            dispatch(changePage(PAGE_USERINFO));
+            dispatch(changePage(PAGE_PROFILE));
         },
         gotoMainPage: () => dispatch(changePage(PAGE_MAIN))
     }

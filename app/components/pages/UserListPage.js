@@ -32,7 +32,7 @@ export default class UserListPage extends Component {
     }
 
     render() {
-        const { user_list, gotoUserInfoPage, gotoMainPage } = this.props;
+        const { user_list, gotoProfilePage, gotoMainPage } = this.props;
         return (
             <div>
                 <div>
@@ -42,7 +42,7 @@ export default class UserListPage extends Component {
                 <div className="chat">
                     {
                         user_list.map((user, index) =>
-                            <UserItem user={user} key={index} gotoUserInfoPage={gotoUserInfoPage}/>
+                            <UserItem user={user} key={index} gotoProfilePage={gotoProfilePage}/>
                         )
                     }
                 </div>

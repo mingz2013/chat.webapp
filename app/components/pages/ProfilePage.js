@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react'
 import chatClient from '../../network/ChatClient'
 import eventDispatcher from '../../network/EventDispatcher'
 
-export default class UserInfoPage extends Component {
+export default class ProfilePage extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -32,12 +32,17 @@ export default class UserInfoPage extends Component {
         const {auth, user_info} = this.props;
         return (
             <div className="main-account">
-                <div className="account-user">
-                    {user_info.username}
+                <div>
+                    <button onclick={gotoMainPage}>Contacts</button>
+                    <span>User Info</span>
                 </div>
+                <div>
+                    <div className="account-user">
+                        {user_info.username}
+                    </div>
 
-                <button onClick={this.onAddFriendsClick.bind(this)}>add</button>
-
+                    <button onClick={this.onAddFriendsClick.bind(this)}>add</button>
+                </div>
             </div>
         )
     }

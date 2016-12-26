@@ -22,7 +22,7 @@ export default class UserItem extends Component {
     }
 
     onUserClick() {
-        const { user, gotoUserInfoPage } = this.props;
-        gotoUserInfoPage(user);
+        const { user, gotoProfilePage } = this.props;
+        gotoProfilePage(user);
     }
 }

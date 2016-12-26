@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import {sendChatMessage, changePage, updateUserInfo} from '../../actions/index'
 
 
-import UserInfoPage from '../../components/pages/UserInfoPage'
+import ProfilePage from '../../components/pages/ProfilePage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserInfoPage)
+export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage)
