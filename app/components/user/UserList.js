@@ -3,9 +3,9 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import Friends from './Friends'
+import User from './User'
 
-export default class FriendsList extends Component {
+export default class UserList extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -16,12 +16,12 @@ export default class FriendsList extends Component {
     }
 
     render() {
-        const { friends_list, gotoFriendsInfoPage } = this.props;
+        const { user_list, gotoUserInfoPage } = this.props;
         return (
             <div className="chat">
                 {
-                    friends_list.map((friends, index) =>
-                        <Friends friends={friends} key={index} gotoFriendsInfoPage={gotoFriendsInfoPage}/>
+                    user_list.map((user, index) =>
+                        <User user={user} key={index} gotoUserInfoPage={gotoUserInfoPage}/>
                     )
                 }
             </div>

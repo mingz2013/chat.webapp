@@ -28,9 +28,9 @@ class ChatClient {
         eventDispatcher.addListener('heartbeat', this._onHeartbeat.bind(this));
     }
 
-    _onConnected(e) {
+    _onConnected() {
         console.log("on connected");
-        console.log(e);
+        //console.log();
     }
 
     _onDisconnected(e) {
@@ -73,7 +73,7 @@ class ChatClient {
     }
 
     friends_add(auth, username) {
-        let packet = new UserInfoPacket(auth, username);
+        let packet = new FriendsAddPacket(auth, username);
         this.socketClient.sendPacket(packet);
     }
 

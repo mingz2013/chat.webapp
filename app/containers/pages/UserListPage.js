@@ -4,10 +4,10 @@
 
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import {changePage, updateUserList, updateFriendsInfo} from '../../actions/index'
+import {changePage, updateUserList, updateUserInfo} from '../../actions/index'
 import {PAGE_FRIENDSINFO} from '../../constants/PageIndex'
 
-import AddFriendsPage from '../../components/pages/AddFriendsPage'
+import UserListPage from '../../components/pages/UserListPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -20,11 +20,11 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
     return {
         updateUserListFunc: (user_list) => dispatch(updateUserList(user_list)),
-        gotoFriendsInfoPage: (friends) => {
-            dispatch(updateFriendsInfo(friends));
+        gotoUserInfoPage: (user) => {
+            dispatch(updateUserInfo(user));
             dispatch(changePage(PAGE_FRIENDSINFO));
         }
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddFriendsPage)
+export default connect(mapStateToProps, mapDispatchToProps)(UserListPage)

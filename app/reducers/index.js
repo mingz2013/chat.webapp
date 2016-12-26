@@ -5,7 +5,7 @@ import { tab_index } from './tab_index'
 import {auth} from './auth'
 import {user_list} from './user_list'
 import {friends_list} from './friends_list'
-import {friends_info} from './friends_info'
+import {user_info} from './user_info'
 
 const rootReducer = combineReducers({
     auth,
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
     messages,
     user_list,
     friends_list,
-    friends_info
+    user_info
 
 });
 

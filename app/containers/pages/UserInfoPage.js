@@ -3,25 +3,24 @@
  */
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import {sendChatMessage, changePage, updateFriendsInfo} from '../../actions/index'
+import {sendChatMessage, changePage, updateUserInfo} from '../../actions/index'
 
 
-
-import FriendsInfoPage from '../../components/pages/FriendsInfoPage'
+import UserInfoPage from '../../components/pages/UserInfoPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
     tab_index: state.tab_index,
     messages: state.messages,
-    friends_info: state.friends_info,
+    user_info: state.user_info,
     auth: state.auth
 });
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateFriendsInfoFunc: (friends) => dispatch(updateFriendsInfo(friends))
+        updateUserInfoFunc: (user) => dispatch(updateUserInfo(user))
 
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendsInfoPage)
+export default connect(mapStateToProps, mapDispatchToProps)(UserInfoPage)

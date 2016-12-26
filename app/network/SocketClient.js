@@ -13,9 +13,9 @@ export default class SocketClient {
         //this.ws_uri = "ws://127.0.0.1:8080/ws_chat";
         console.log(this.ws_uri);
         this.socket = eio(this.ws_uri);
-        this.socket.on('open', function (e) {
+        this.socket.on('open', function () {
             console.log("on open...");
-            console.log(e);
+            //console.log(e);
             this.socket.on('message', this._onMessage.bind(this));
             this.socket.on('close', this._onClose.bind(this));
 
@@ -23,7 +23,7 @@ export default class SocketClient {
             //    "cmd": "login",
             //    "data": "hello"
             //}));
-            eventDispatcher.dispatchEvent('open', e);
+            eventDispatcher.dispatchEvent('open');
         }.bind(this));
 
     }

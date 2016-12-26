@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import FriendsList from '../friends/FriendsList'
+import UserList from '../user/UserList'
 
 export default class FriendsTab extends Component {
     constructor(props, context) {
@@ -15,12 +15,12 @@ export default class FriendsTab extends Component {
 
     }
     render() {
-        const { friends_list, gotoAddFriendsPage, gotoFriendsInfoPage } = this.props;
+        const { friends_list, gotoAddFriendsPage, gotoUserInfoPage } = this.props;
 
         return (
             <div className="main-friends">
                 <div className="friends-item" onClick={gotoAddFriendsPage}>new friends</div>
-                <FriendsList friends_list={friends_list} gotoFriendsInfoPage={gotoFriendsInfoPage}/>
+                <UserList friends_list={friends_list} gotoUserInfoPage={gotoUserInfoPage}/>
             </div>
         )
     }

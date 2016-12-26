@@ -3,11 +3,11 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import FriendsList from '../friends/FriendsList'
+import UserList from '../user/UserList'
 import chatClient from '../../network/ChatClient'
 import eventDispatcher from '../../network/EventDispatcher'
 
-export default class AddFriendsPage extends Component {
+export default class UserListPage extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -33,10 +33,10 @@ export default class AddFriendsPage extends Component {
     }
 
     render() {
-        const { user_list, gotoFriendsInfoPage } = this.props;
+        const { user_list, gotoUserInfoPage } = this.props;
         return (
             <div className="chat">
-                <FriendsList friends_list={user_list} gotoFriendsInfoPage={gotoFriendsInfoPage}/>
+                <UserList user_list={user_list} gotoUserInfoPage={gotoUserInfoPage}/>
             </div>
         )
     }
