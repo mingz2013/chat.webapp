@@ -19,7 +19,7 @@ export default class ChatPage extends Component {
         return (
             <div className="chat">
                 <div>
-                    <button>^</button>
+                    <button>Profile</button>
                     <span>username</span>
                     <button>Close</button>
                 </div>
