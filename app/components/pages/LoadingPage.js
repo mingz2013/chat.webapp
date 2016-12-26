@@ -15,7 +15,6 @@ export default class LoadingPage extends Component {
 
     componentDidMount() {
         const { auth, gotoLoginPage, gotoMainPage } = this.props;
-        chatClient.connect();
         if (!auth.token) {
             gotoLoginPage();
         } else {

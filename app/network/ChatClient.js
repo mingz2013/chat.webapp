@@ -17,13 +17,9 @@ import eventDispatcher from './EventDispatcher'
 class ChatClient {
     constructor() {
         console.log("chat client contructor");
-        this.socketClient = null;
-    }
-
-    connect() {
         this.socketClient = new SocketClient(ws_uri);
-        eventDispatcher.addListener('open', this._onConnected.bind(this));
-        eventDispatcher.addListener('close', this._onDisconnected.bind(this));
+        eventDispatcher.addListener('connect', this._onConnected.bind(this));
+        eventDispatcher.addListener('disconnect', this._onDisconnected.bind(this));
 
         eventDispatcher.addListener('heartbeat', this._onHeartbeat.bind(this));
     }
