@@ -35,13 +35,13 @@ export default class ProfilePage extends Component {
                 <div>
                     <button onClick={this.onBackClick.bind(this)}>Back</button>
                     <span>Profile</span>
+                    <button onclick={this.onAddFriendsClick.bind(this)}>Add</button>
                 </div>
                 <div>
                     <div className="account-user">
                         {user_info.username}
                     </div>
 
-                    <button onClick={this.onAddFriendsClick.bind(this)}>add</button>
                 </div>
             </div>
         )
@@ -49,7 +49,7 @@ export default class ProfilePage extends Component {
 
     onAddFriendsClick() {
         const {auth, user_info} = this.props;
-        chatClient.friends_add(auth, user_info.username);
+
     }
 
     onBackClick() {

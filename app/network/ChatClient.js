@@ -72,8 +72,8 @@ class ChatClient {
         this.socketClient.sendPacket(packet);
     }
 
-    friends_add(auth, username) {
-        let packet = new FriendsAddPacket(auth, username);
+    friends_add(auth, username, text) {
+        let packet = new FriendsAddPacket(auth, username, text);
         this.socketClient.sendPacket(packet);
     }
 

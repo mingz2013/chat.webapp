@@ -5,9 +5,9 @@ import BasePacket from './BasePacket'
 
 export default class FriendsAddPacket extends BasePacket {
 
-    constructor(auth, username) {
+    constructor(auth, username, text) {
         let cmd = "friends_add";
-        let data = {"username": username};
+        let data = {"username": username, "content": text};
         super(cmd, data, auth);
     }
 }
