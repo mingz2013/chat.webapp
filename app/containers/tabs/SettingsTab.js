@@ -4,7 +4,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import MessageTab from '../../components/tabs/MessageTab'
+import SettingsTab from '../../components/tabs/SettingsTab'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MessageTab)
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsTab)

@@ -3,11 +3,11 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import AccountTab from '../../containers/tabs/AccountTab'
-import FriendsTab from '../../containers/tabs/FriendsTab'
-import MessageTab from '../../containers/tabs/MessageTab'
+import SettingsTab from '../../containers/tabs/SettingsTab'
+import ContactsTab from '../../containers/tabs/ContactsTab'
+import ChatsTab from '../../containers/tabs/ChatsTab'
 
-import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../../constants/TabIndex'
+import {TAB_CHATS, TAB_CONTACTS, TAB_SETTINGS} from '../../constants/TabIndex'
 
 
 export default class MainPage extends Component {
@@ -22,24 +22,24 @@ export default class MainPage extends Component {
 
     render() {
 
-        const { tab_index, onMessageClick, onFriendsClick, onAccountClick } = this.props;
+        const { tab_index, gotoChatsTab, gotoContactsTab, gotoSettingsTab } = this.props;
         return (
             <div className="main">
                 {
-                    tab_index == TAB_MESSAGE ? (
-                        <MessageTab/>
+                    tab_index == TAB_CHATS ? (
+                        <ChatsTab/>
                     ) : (
-                        tab_index == TAB_FRIENDS ? (
-                            <FriendsTab/>
+                        tab_index == TAB_CONTACTS ? (
+                            <ContactsTab/>
                         ) : (
-                            <AccountTab/>
+                            <SettingsTab/>
                         )
                     )
                 }
                 <div className="page-button">
-                    <span onClick={onMessageClick}>message</span>
-                    <span onClick={onFriendsClick}>friends</span>
-                    <span onClick={onAccountClick}>account</span>
+                    <span onClick={gotoChatsTab}>Chats</span>
+                    <span onClick={gotoContactsTab}>Contacts</span>
+                    <span onClick={gotoSettingsTab}>Settings</span>
                 </div>
             </div>
         )

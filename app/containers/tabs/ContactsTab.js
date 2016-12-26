@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react'
 
 import { connect } from 'react-redux'
 
-import FriendsTab from '../../components/tabs/FriendsTab'
+import ContactsTab from '../../components/tabs/ContactsTab'
 
 import {changePage, updateUserInfo} from '../../actions/index'
 import {PAGE_USERLIST, PAGE_USERINFO} from '../../constants/PageIndex'
@@ -28,4 +28,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendsTab)
+export default connect(mapStateToProps, mapDispatchToProps)(ContactsTab)

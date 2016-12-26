@@ -4,7 +4,7 @@
 import React, { Component, PropTypes } from 'react'
 
 import { connect } from 'react-redux'
-import {TAB_ACCOUNT, TAB_FRIENDS, TAB_MESSAGE} from '../../constants/TabIndex'
+import {TAB_CHATS, TAB_CONTACTS, TAB_SETTINGS} from '../../constants/TabIndex'
 import { changeTab } from '../../actions/index'
 import MainPage from '../../components/pages/MainPage'
 
@@ -16,9 +16,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onMessageClick: (e) => dispatch(changeTab(TAB_MESSAGE)),
-        onFriendsClick: (e) => dispatch(changeTab(TAB_FRIENDS)),
-        onAccountClick: (e) => dispatch(changeTab(TAB_ACCOUNT))
+        gotoChatsTab: (e) => dispatch(changeTab(TAB_CHATS)),
+        gotoContactsTab: (e) => dispatch(changeTab(TAB_CONTACTS)),
+        gotoSettingsTab: (e) => dispatch(changeTab(TAB_SETTINGS))
     }
 };
 

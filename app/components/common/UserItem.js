@@ -4,7 +4,7 @@
 import React, { Component, PropTypes } from 'react'
 
 
-export default class User extends Component {
+export default class UserItem extends Component {
     constructor(props, context) {
         super(props, context);
 

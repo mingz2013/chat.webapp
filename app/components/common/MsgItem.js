@@ -3,9 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import MessageList from '../message/MessageList'
-
-export default class MessageTab extends Component {
+export default class MsgItem extends Component {
     constructor(props, context) {
         super(props, context);
 
@@ -15,10 +13,9 @@ export default class MessageTab extends Component {
 
     }
     render() {
-        const { messages } = this.props;
-
+        const {message, key} = this.props;
         return (
-            <MessageList messages={messages}/>
+            <div className="message-item">{message.text}</div>
         )
     }
 }

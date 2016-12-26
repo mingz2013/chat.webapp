@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import UserList from '../user/UserList'
+import UserItem from '../common/UserItem'
 import chatClient from '../../network/ChatClient'
 import eventDispatcher from '../../network/EventDispatcher'
 
@@ -35,8 +35,18 @@ export default class UserListPage extends Component {
     render() {
         const { user_list, gotoUserInfoPage } = this.props;
         return (
-            <div className="chat">
-                <UserList user_list={user_list} gotoUserInfoPage={gotoUserInfoPage}/>
+            <div>
+                <div>
+                    <span>Contacts</span>
+                    <button>Add</button>
+                </div>
+                <div className="chat">
+                    {
+                        user_list.map((user, index) =>
+                            <UserItem user={user} key={index} gotoUserInfoPage={gotoUserInfoPage}/>
+                        )
+                    }
+                </div>
             </div>
         )
     }
