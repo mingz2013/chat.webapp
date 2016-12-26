@@ -32,11 +32,11 @@ export default class UserListPage extends Component {
     }
 
     render() {
-        const { user_list, gotoUserInfoPage } = this.props;
+        const { user_list, gotoUserInfoPage, gotoMainPage } = this.props;
         return (
             <div>
                 <div>
-                    <button>Contacts</button>
+                    <button onclick={gotoMainPage}>Contacts</button>
                     <span>Find</span>
                 </div>
                 <div className="chat">

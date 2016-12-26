@@ -21,10 +21,9 @@ export default class ContactsTab extends Component {
             <div className="main-friends">
                 <div>
                     <span>Contacts</span>
-                    <button>Add</button>
+                    <button onClick={gotoAddFriendsPage}>Add</button>
                 </div>
                 <div className="chat">
-                    <div className="friends-item" onClick={gotoAddFriendsPage}>new friends</div>
                     {
                         user_list.map((user, index) =>
                             <UserItem user={user} key={index} gotoUserInfoPage={gotoUserInfoPage}/>
