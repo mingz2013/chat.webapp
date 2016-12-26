@@ -15,7 +15,7 @@ export default class ContactsTab extends Component {
 
     }
     render() {
-        const { user_list, gotoSearchPage, gotoProfilePage } = this.props;
+        const { friends_list, gotoSearchPage, gotoProfilePage } = this.props;
 
         return (
             <div className="main-friends">
@@ -25,7 +25,7 @@ export default class ContactsTab extends Component {
                 </div>
                 <div className="chat">
                     {
-                        user_list.map((user, index) =>
+                        friends_list.map((user, index) =>
                             <UserItem user={user} key={index} gotoProfilePage={gotoProfilePage}/>
                         )
                     }
