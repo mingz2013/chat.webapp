@@ -27,7 +27,7 @@ export default class VerifyPage extends Component {
                 </div>
 
                 <div className="chat">
-                    <input ref="input" type="text"/>
+                    <input ref="input" type="text" placeholder="verify message"/>
                 </div>
 
             </div>
