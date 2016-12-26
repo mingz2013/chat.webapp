@@ -35,7 +35,7 @@ export default class ProfilePage extends Component {
                 <div>
                     <button onClick={this.onBackClick.bind(this)}>Back</button>
                     <span>Profile</span>
-                    <button onclick={this.onAddFriendsClick.bind(this)}>Add</button>
+                    <button onClick={this.onAddFriendsClick.bind(this)}>Add</button>
                 </div>
                 <div>
                     <div className="account-user">
