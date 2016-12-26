@@ -16,8 +16,7 @@ export default class UserListPage extends Component {
     componentDidMount() {
         const { auth } = this.props;
         eventDispatcher.addListener('user_list', this.onUserList.bind(this));
-        chatClient.user_list(auth)
-
+        chatClient.user_list(auth);
     }
 
     onUserList(data) {
