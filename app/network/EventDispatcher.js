@@ -1,40 +1,46 @@
 /**
  * Created by zhaojm on 24/12/2016.
  */
-class EventDispatcher {
+export default (function () {
 
-    constructor() {
-        console.log("eventdispatcher constructor");
-        this._events = {};
-    }
 
-    removeListener(event, handler) {
+    let _events = {};
+
+
+    let removeListener = function (event, handler) {
         console.log("removeListener: " + event);
-        let handlers = this._events[event] || [];
+        let handlers = _events[event] || [];
         var index = handlers.indexOf(handler);
         if (index > -1) {
-            this.splice(index, 1);
+            handlers.splice(index, 1);
         }
-        this._events[event] = handlers;
-    }
+        _events[event] = handlers;
+    };
 
-    addListener(event, handler) {
+    let addListener = function (event, handler) {
         console.log("addListener: " + event);
-        let handlers = this._events[event] || [];
+        let handlers = _events[event] || [];
         handlers.push(handler);
-        this._events[event] = handlers;
+        _events[event] = handlers;
 
-    }
+    };
 
-    dispatchEvent(event, params) {
+    let dispatchEvent = function (event, params) {
         console.log("dispatchEvent: " + event);
-        let handlers = this._events[event] || [];
+        let handlers = _events[event] || [];
         console.log(handlers.length);
         handlers.forEach(function (handler) {
             handler(params);
         })
 
-    }
-}
+    };
 
-export default new EventDispatcher();
+    return {
+        "removeListener": removeListener,
+        "addListener": addListener,
+        "dispatchEvent": dispatchEvent
+    }
+
+
+})();
+
