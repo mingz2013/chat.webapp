@@ -37,8 +37,8 @@ export default class UserListPage extends Component {
         return (
             <div>
                 <div>
-                    <span>Contacts</span>
-                    <button>Add</button>
+                    <button>Contacts</button>
+                    <span>Find</span>
                 </div>
                 <div className="chat">
                     {

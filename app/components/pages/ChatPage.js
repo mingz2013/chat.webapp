@@ -3,8 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 
-import ChatBox from '../chat/ChatBox'
-import SendChatMessage from '../chat/SendChatMessage'
+import ChatItem from '../common/ChatItem'
 
 export default class ChatPage extends Component {
     constructor(props, context) {
@@ -19,9 +18,36 @@ export default class ChatPage extends Component {
         const { messages, onSendMessageClick } = this.props;
         return (
             <div className="chat">
-                <ChatBox messages={messages}/>
-                <SendChatMessage onSendClick={onSendMessageClick(message)}/>
+                <div>
+                    <button>^</button>
+                    <span>username</span>
+                    <button>Close</button>
+                </div>
+
+                <div className="chat-box">
+                    {
+                        messages.map((message, index) =>
+                            <ChatItem {...message} key={index}/>
+                        )
+                    }
+                </div>
+
+                <div className="chat-send">
+                    <input type='text' ref='input'/>
+                    <button onClick={(e) => this.handleClick(e)}>
+                        Add
+                    </button>
+                </div>
+
             </div>
         )
+    }
+
+    handleClick(e) {
+        const { messages, onSendMessageClick } = this.props;
+        const node = this.refs.input;
+        const text = node.value.trim();
+        onSendMessageClick(text);
+        node.value = ''
     }
 }
