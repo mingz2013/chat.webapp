@@ -36,7 +36,7 @@ export default class UserListPage extends Component {
         return (
             <div>
                 <div>
-                    <button onclick={gotoMainPage}>Contacts</button>
+                    <button onClick={this.onContactsClick.bind(this)}>Contacts</button>
                     <span>Find</span>
                 </div>
                 <div className="chat">
@@ -48,5 +48,10 @@ export default class UserListPage extends Component {
                 </div>
             </div>
         )
+    }
+
+    onContactsClick() {
+        const {gotoMainPage} = this.props;
+        gotoMainPage();
     }
 }

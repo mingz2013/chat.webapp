@@ -4,7 +4,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import {sendChatMessage, changePage, updateUserInfo} from '../../actions/index'
-
+import {PAGE_MAIN} from '../../constants/PageIndex'
 
 import ProfilePage from '../../components/pages/ProfilePage'
 
@@ -18,8 +18,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateUserInfoFunc: (user) => dispatch(updateUserInfo(user))
-
+        updateUserInfoFunc: (user) => dispatch(updateUserInfo(user)),
+        gotoMainPage: () => dispatch(changePage(PAGE_MAIN))
     }
 };
 
