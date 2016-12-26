@@ -8,3 +8,4 @@ export const PAGE_CHAT = 'page/chat';
 export const PAGE_LOADING = 'page/loading';
 export const PAGE_SEARCH = 'page/search';
 export const PAGE_PROFILE = 'page/profile';
+export const PAGE_VERIFY = 'page/verify';

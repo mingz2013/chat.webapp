@@ -9,8 +9,9 @@ import ChatPage from '../containers/pages/ChatPage'
 import LoadingPage from '../containers/pages/LoadingPage'
 import SearchPage from '../containers/pages/SearchPage'
 import ProfilePage from '../containers/pages/ProfilePage'
+import VerifyPage from '../containers/pages/VerifyPage'
 
-import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING, PAGE_SEARCH, PAGE_PROFILE } from '../constants/PageIndex'
+import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING, PAGE_SEARCH, PAGE_PROFILE, PAGE_VERIFY } from '../constants/PageIndex'
 
 
 import chatClient from '../network/ChatClient'
@@ -71,8 +72,11 @@ export default class App extends Component {
                                         page_index == PAGE_PROFILE ? (
                                             <ProfilePage/>
                                         ) : (
+                                            page_index == PAGE_VERIFY ? (
+                                                <VerifyPage/>
+                                            ) : (
                                             <ChatPage/>
-                                        )))))))
+                                            ))))))))
                 }
             </div>
         )

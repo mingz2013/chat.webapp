@@ -48,8 +48,8 @@ export default class ProfilePage extends Component {
     }
 
     onAddFriendsClick() {
-        const {auth, user_info} = this.props;
-
+        const {auth, user_info, gotoVerifyPage} = this.props;
+        gotoVerifyPage();
     }
 
     onBackClick() {

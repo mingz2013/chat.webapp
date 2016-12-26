@@ -1,12 +1,13 @@
 /**
- * Created by zhaojm on 25/12/2016.
+ * Created by zhaojm on 26/12/2016.
  */
+
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import {sendChatMessage, changePage, updateUserInfo} from '../../actions/index'
 import {PAGE_MAIN, PAGE_VERIFY} from '../../constants/PageIndex'
 
-import ProfilePage from '../../components/pages/ProfilePage'
+import VerifyPage from '../../components/pages/VerifyPage'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -24,4 +25,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage)
+export default connect(mapStateToProps, mapDispatchToProps)(VerifyPage)
