@@ -3,7 +3,7 @@
  */
 
 
-import {ws_uri} from '../constants/config'
+import {ws_uri} from '../constants/Config'
 import SocketClient from './SocketClient'
 
 import LoginPacket from './packets/LoginPacket'
