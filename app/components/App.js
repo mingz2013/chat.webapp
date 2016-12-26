@@ -7,10 +7,10 @@ import RegisterPage from '../containers/pages/RegisterPage'
 import MainPage from '../containers/pages/MainPage'
 import ChatPage from '../containers/pages/ChatPage'
 import LoadingPage from '../containers/pages/LoadingPage'
-import AddFriendsPage from '../containers/pages/AddFriendsPage'
-import FriendsInfoPage from '../containers/pages/FriendsInfoPage'
+import UserListPage from '../containers/pages/UserListPage'
+import UserInfoPage from '../containers/pages/UserInfoPage'
 
-import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING, PAGE_ADDFRIENDS, PAGE_FRIENDSINFO } from '../constants/PageIndex'
+import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING, PAGE_USERLIST, PAGE_USERINFO } from '../constants/PageIndex'
 
 
 import chatClient from '../network/ChatClient'
@@ -65,11 +65,11 @@ export default class App extends Component {
                                 page_index == PAGE_CHAT ? (
                                     <ChatPage/>
                                 ) : (
-                                    page_index == PAGE_ADDFRIENDS ? (
-                                        <AddFriendsPage/>
+                                    page_index == PAGE_USERLIST ? (
+                                        <UserListPage/>
                                     ) : (
-                                        page_index == PAGE_FRIENDSINFO ? (
-                                            <FriendsInfoPage/>
+                                        page_index == PAGE_USERINFO ? (
+                                            <UserInfoPage/>
                                         ) : (
                                             <ChatPage/>
                                         )))))))

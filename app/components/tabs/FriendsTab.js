@@ -15,12 +15,12 @@ export default class FriendsTab extends Component {
 
     }
     render() {
-        const { friends_list, gotoAddFriendsPage, gotoUserInfoPage } = this.props;
+        const { user_list, gotoAddFriendsPage, gotoUserInfoPage } = this.props;
 
         return (
             <div className="main-friends">
                 <div className="friends-item" onClick={gotoAddFriendsPage}>new friends</div>
-                <UserList friends_list={friends_list} gotoUserInfoPage={gotoUserInfoPage}/>
+                <UserList user_list={user_list} gotoUserInfoPage={gotoUserInfoPage}/>
             </div>
         )
     }
