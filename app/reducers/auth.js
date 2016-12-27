@@ -8,7 +8,7 @@ const initialState = {
     "token": null
 };
 
-export default auth = (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_AUTH:
             return action.auth;

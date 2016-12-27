@@ -31,6 +31,7 @@ export default class SocketClient {
         let data = message['data'];
 
         eventDispatcher.dispatchEvent(cmd, data);
+
     }
 
 

@@ -2,7 +2,7 @@ import { SEND_CHAT_MESSAGE } from '../constants/ActionTypes'
 
 const initialState = [];
 
-export default messages = (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case SEND_CHAT_MESSAGE:
             return [

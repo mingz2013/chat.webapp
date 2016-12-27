@@ -3,7 +3,7 @@ import { TAB_CONTACTS, TAB_CHATS } from '../constants/TabIndex'
 
 const initialState = TAB_CONTACTS;
 
-export default tab_index = (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case CHANGE_TAB:
             //console.log(action);

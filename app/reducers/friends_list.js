@@ -6,7 +6,7 @@ import { UPDATE_FRIENDSLIST } from '../constants/ActionTypes'
 
 const initialState = [];
 
-export default friends_list = (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_FRIENDSLIST:
             return action.friends_list;
