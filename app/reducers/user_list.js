@@ -6,7 +6,7 @@ import { UPDATE_USERLIST } from '../constants/ActionTypes'
 
 const initialState = [];
 
-export function user_list(state = initialState, action) {
+export default user_list = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_USERLIST:
             return action.user_list;

@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
 
 
-export default function configureStore(preloadedState) {
+export default configureStore = (preloadedState) => {
     return createStore(
         rootReducer,
         preloadedState,

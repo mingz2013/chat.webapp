@@ -6,7 +6,7 @@ import { UPDATE_USERINFO } from '../constants/ActionTypes'
 
 const initialState = [];
 
-export function user_info(state = initialState, action) {
+export default user_info = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_USERINFO:
             return action.user_info;

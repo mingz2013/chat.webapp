@@ -39,7 +39,7 @@ class ChatClient {
         console.log(data);
         if (data.retcode == 0) {
             let messages = data.result;
-            messages.forEach(function (message) {
+            messages.forEach((message) => {
                 eventDispatcher.dispatchEvent(message.type, message);
             });
 

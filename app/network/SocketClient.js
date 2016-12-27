@@ -13,14 +13,14 @@ export default class SocketClient {
         this.sio = sio(this.ws_uri);
 
 
-        this.sio.on('connect', function () {
+        this.sio.on('connect', (() => {
             console.log("on connect...");
             //console.log(e);
             this.sio.on('message', this._onMessage.bind(this));
             this.sio.on('disconnect', this._onDisconnect.bind(this));
 
             eventDispatcher.dispatchEvent('connect');
-        }.bind(this));
+        }).bind(this));
     }
 
 

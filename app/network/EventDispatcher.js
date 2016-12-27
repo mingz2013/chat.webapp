@@ -1,13 +1,13 @@
 /**
  * Created by zhaojm on 24/12/2016.
  */
-export default (function () {
+export default (() => {
 
 
     let _events = {};
 
 
-    let removeListener = function (event, handler) {
+    let removeListener = (event, handler) => {
         console.log("removeListener: " + event);
         let handlers = _events[event] || [];
         var index = handlers.indexOf(handler);
@@ -17,7 +17,7 @@ export default (function () {
         _events[event] = handlers;
     };
 
-    let addListener = function (event, handler) {
+    let addListener = (event, handler) => {
         console.log("addListener: " + event);
         let handlers = _events[event] || [];
         handlers.push(handler);
@@ -25,11 +25,11 @@ export default (function () {
 
     };
 
-    let dispatchEvent = function (event, params) {
+    let dispatchEvent = (event, params) => {
         console.log("dispatchEvent: " + event);
         let handlers = _events[event] || [];
         console.log(handlers.length);
-        handlers.forEach(function (handler) {
+        handlers.forEach((handler) => {
             handler(params);
         })
 
