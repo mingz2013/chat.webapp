@@ -10,6 +10,7 @@ import LoadingPage from '../containers/pages/LoadingPage'
 import SearchPage from '../containers/pages/SearchPage'
 import ProfilePage from '../containers/pages/ProfilePage'
 import VerifyPage from '../containers/pages/VerifyPage'
+import Toast from '../components/common/Toast'
 
 import { PAGE_CHAT, PAGE_LOGIN, PAGE_MAIN, PAGE_REGISTER, PAGE_LOADING, PAGE_SEARCH, PAGE_PROFILE, PAGE_VERIFY } from '../constants/PageIndex'
 
