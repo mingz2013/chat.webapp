@@ -34,9 +34,9 @@ export default class SearchPage extends Component {
     render() {
         const { user_list, gotoProfilePage, gotoMainPage } = this.props;
         return (
-            <div>
-                <div>
-                    <button onClick={this.onContactsClick.bind(this)}>Contacts</button>
+            <div className="main-message">
+                <div className="message-title">
+                    <button className="pl" onClick={this.onContactsClick.bind(this)}>Contacts</button>
                     <span>Find</span>
                 </div>
                 <div className="chat">

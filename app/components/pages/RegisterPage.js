@@ -37,12 +37,13 @@ export default class RegisterPage extends Component {
                 <input type='text' ref='username' placeholder="用户名"/>
                 <input type='text' ref='password' placeholder="密码"/>
                 <input type='text' ref='password2' placeholder="重复密码"/>
-                <a onClick={gotoLoginPage}>Login</a><br/>
+                <br/>
                 <span ref="errmsg"></span>
                 <button
                     onClick={()=>this.handleClick()}>
                     Register
                 </button>
+                <a className="fr" onClick={gotoLoginPage}>Login</a>
             </div>
         )
     }
