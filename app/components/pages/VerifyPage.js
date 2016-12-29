@@ -20,16 +20,12 @@ export default class VerifyPage extends Component {
         const { gotoBack } = this.props;
         return (
             <div className="chat">
-                <div>
-                    <button onClick={gotoBack}>Cancel</button>
+                <div className="message-title">
+                    <button className="pl" onClick={gotoBack}>Cancel</button>
                     <span>Verify</span>
-                    <button onClick={this.onSendClick.bind(this)}>Send</button>
+                    <button className="pr" onClick={this.onSendClick.bind(this)}>Send</button>
                 </div>
-
-                <div className="chat">
-                    <input ref="input" type="text" placeholder="verify message"/>
-                </div>
-
+                <input ref="input" type="text" placeholder="verify message"/>
             </div>
         )
     }

@@ -32,14 +32,15 @@ export default class ProfilePage extends Component {
         const {auth, user_info, gotoMainPage} = this.props;
         return (
             <div className="main-account">
-                <div>
-                    <button onClick={this.onBackClick.bind(this)}>Back</button>
+                <div className="message-title">
+                    <button className="pl" onClick={this.onBackClick.bind(this)}>Back</button>
                     <span>Profile</span>
-                    <button onClick={this.onAddFriendsClick.bind(this)}>Add</button>
+                    <button className="pr" onClick={this.onAddFriendsClick.bind(this)}>Add</button>
                 </div>
                 <div>
                     <div className="account-user">
-                        {user_info.username}
+                        <img className="fl" src="" alt=""/>
+                        <div className="account-user-title fl">{user_info.username}</div>
                     </div>
 
                 </div>
