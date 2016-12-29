@@ -19,7 +19,7 @@ export default class UserItem extends Component {
         return (
             <div className="friends-item clear" onClick={this.onUserClick.bind(this)}>
                 <img className="fl" src="" alt=""/>
-                <div className="friends-item-user fl">{user.username}-444</div>
+                <div className="friends-item-user fl">{user.username}</div>
             </div>
         )
     }

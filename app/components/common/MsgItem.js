@@ -15,7 +15,7 @@ export default class MsgItem extends Component {
     render() {
         const {message, key} = this.props;
         return (
-            <div className="message-item">{message.text}1233</div>
+            <div className="message-item">{message.text}</div>
         )
     }
 }
