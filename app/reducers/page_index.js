@@ -3,7 +3,7 @@ import {PAGE_LOGIN, PAGE_MAIN, PAGE_CHAT, PAGE_LOADING, PAGE_PROFILE} from '../c
 
 const initialState = PAGE_LOADING;
 
-export default (state = PAGE_MAIN, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case CHANGE_PAGE:
             return action.page_index;
