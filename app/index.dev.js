@@ -37,7 +37,7 @@ render(
     <Provider store={store}>
         <div className="height-init">
             <App />
-            <DevTools />
+            {/*<DevTools />*/}
         </div>
     </Provider>,
     document.getElementById('root')

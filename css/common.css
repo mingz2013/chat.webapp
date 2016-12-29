@@ -2,9 +2,9 @@
 * {
     margin: 0;
     padding: 0;
-    /*box-sizing: border-box;*/
+    box-sizing: border-box;
     border: none;
-    /*list-style: none;*/
+    list-style: none;
     font-family: OneNikeCurrency, 'TradeGothicW01-BoldCn20 675334', Helvetica, Arial, 'Heiti SC', 'ST Heiti', 华文黑体, 'Microsoft YaHei', 雅黑体, SimHei, 黑体, sans-serif;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 ul, li {
-    /*list-style-type: none;*/
+    list-style-type: none;
 }
 
 a, input {

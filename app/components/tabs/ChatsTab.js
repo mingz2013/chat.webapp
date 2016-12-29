@@ -20,7 +20,7 @@ export default class ChatsTab extends Component {
         return (
 
             <div className="main-message">
-                <div>
+                <div className="message-title">
                     <span>Chats</span>
                 </div>
                 <div>

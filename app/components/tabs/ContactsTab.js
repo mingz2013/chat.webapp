@@ -19,7 +19,7 @@ export default class ContactsTab extends Component {
 
         return (
             <div className="main-friends">
-                <div>
+                <div className="message-title">
                     <span>Contacts</span>
                     <button onClick={gotoSearchPage}>Search</button>
                 </div>
