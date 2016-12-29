@@ -17,7 +17,10 @@ export default class UserItem extends Component {
     render() {
         const { user } = this.props;
         return (
-            <div className="friends-item" onClick={this.onUserClick.bind(this)}>{user.username}</div>
+            <div className="friends-item clear" onClick={this.onUserClick.bind(this)}>
+                <img className="fl" src="" alt=""/>
+                <div className="friends-item-user fl">{user.username}</div>
+            </div>
         )
     }
 

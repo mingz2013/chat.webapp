@@ -60,6 +60,16 @@ hr {
     float: right;
 }
 
+.pl {
+    position: absolute;
+    left: 0;
+}
+
+.pr {
+    position: absolute;
+    right: 0;
+}
+
 #app {
     height: 100%;
 }

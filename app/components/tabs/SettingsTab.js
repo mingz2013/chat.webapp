@@ -18,8 +18,7 @@ export default class SettingsTab extends Component {
         return (
             <div className="main-account">
                 <div className="message-title">
-                    <span>Contacts</span>
-                    <button>Add</button>
+                    <span>Settings</span>
                 </div>
                 <div>
                     <div className="account-user">
