@@ -24,6 +24,7 @@ export default class ContactsTab extends Component {
                     <button className="pr" onClick={gotoSearchPage}>Search</button>
                 </div>
                 <div className="chat">
+                    <UserItem user={user} key={index} gotoProfilePage={gotoProfilePage}/>
                     {
                         friends_list.map((user, index) =>
                             <UserItem user={user} key={index} gotoProfilePage={gotoProfilePage}/>

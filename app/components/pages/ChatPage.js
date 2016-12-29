@@ -25,6 +25,7 @@ export default class ChatPage extends Component {
                 </div>
 
                 <div className="chat-box">
+                    <ChatItem {...message} key={index}/>
                     {
                         messages.map((message, index) =>
                             <ChatItem {...message} key={index}/>

@@ -18,7 +18,7 @@ export default class ChatItem extends Component {
             <li className="chat-message clear">
                 <img className="fr" src="" alt=""/>
                 <div className="fr">
-                    {this.props.text}
+                    {this.props.text} 1233
                 </div>
             </li>
         )

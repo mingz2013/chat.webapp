@@ -24,6 +24,7 @@ export default class ChatsTab extends Component {
                     <span>Chats</span>
                 </div>
                 <div>
+                    <MsgItem message={message} key={index}/>
                     { // chat list
                         messages.map((message, index) =>
                             <MsgItem message={message} key={index}/>
