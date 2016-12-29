@@ -25,7 +25,7 @@ export default class VerifyPage extends Component {
                     <span>Verify</span>
                     <button className="pr" onClick={this.onSendClick.bind(this)}>Send</button>
                 </div>
-                <input ref="input" type="text" placeholder="verify message"/>
+                <input className="chat-input" ref="input" type="text" placeholder="verify message"/>
             </div>
         )
     }

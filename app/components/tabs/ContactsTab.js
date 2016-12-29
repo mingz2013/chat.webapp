@@ -23,7 +23,7 @@ export default class ContactsTab extends Component {
                     <span>Contacts</span>
                     <button className="pr" onClick={gotoSearchPage}>Search</button>
                 </div>
-                <div className="chat">
+                <div className="chat-box">
 
                     <UserItem user={{"username": "23"}} key={1} gotoProfilePage={gotoProfilePage}/>
                     {

@@ -15,7 +15,10 @@ export default class MsgItem extends Component {
     render() {
         const {message, key} = this.props;
         return (
-            <div className="message-item">{message.text}</div>
+            <div className="message-item">
+                <img className="fl" src="" alt=""/>
+                <div className="message-item-user fl">{message.text}</div>
+            </div>
         )
     }
 }

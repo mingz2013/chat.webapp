@@ -18,10 +18,10 @@ export default class ChatPage extends Component {
         const { messages, onSendMessageClick } = this.props;
         return (
             <div className="chat">
-                <div>
-                    <button>Profile</button>
+                <div className="message-title">
+                    <button className="pl">Profile</button>
                     <span>username</span>
-                    <button>Close</button>
+                    <button className="pr">Close</button>
                 </div>
 
                 <div className="chat-box">
