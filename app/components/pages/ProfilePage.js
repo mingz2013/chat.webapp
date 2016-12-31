@@ -42,7 +42,17 @@ export default class ProfilePage extends Component {
                         <img className="fl" src="" alt=""/>
                         <div className="account-user-title fl">{user_info.username}</div>
                     </div>
+                    <div>
 
+                        <div className="account-group">
+                            <div className="account-item"></div>
+                            <div className="account-item"></div>
+                        </div>
+                        <div className="account-group">
+                            <div className="account-item"></div>
+                            <div className="account-item"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
