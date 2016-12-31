@@ -9,6 +9,11 @@ import ChatsTab from '../../containers/tabs/ChatsTab'
 
 import {TAB_CHATS, TAB_CONTACTS, TAB_SETTINGS} from '../../constants/TabIndex'
 
+import chatClient from '../../network/ChatClient'
+import eventDispatcher from '../../network/EventDispatcher'
+
+
+
 
 export default class MainPage extends Component {
     constructor(props, context) {
@@ -17,7 +22,17 @@ export default class MainPage extends Component {
     }
 
     componentDidMount() {
+        eventDispatcher.addListener("new_message", this.onNewMessage.bind(this));
+    }
 
+    onNewMessage(data) {
+        const {addMessageFunc} = this.props;
+        if (data.retcode == 0) {
+            let message_list = data.result;
+            message_list.forEach((message) => {
+                addMessageFunc(message);
+            })
+        }
     }
 
     render() {

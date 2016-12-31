@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import {TAB_CHATS, TAB_CONTACTS, TAB_SETTINGS} from '../../constants/TabIndex'
 import { changeTab } from '../../actions/index'
 import MainPage from '../../components/pages/MainPage'
+import {addMessage} from '../../actions/index'
 
 const mapStateToProps = (state) => ({
     page_index: state.page_index,
@@ -18,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         gotoChatsTab: (e) => dispatch(changeTab(TAB_CHATS)),
         gotoContactsTab: (e) => dispatch(changeTab(TAB_CONTACTS)),
-        gotoSettingsTab: (e) => dispatch(changeTab(TAB_SETTINGS))
+        gotoSettingsTab: (e) => dispatch(changeTab(TAB_SETTINGS)),
+        addMessageFunc: (message) => dispatch(addMessage(message))
     }
 };
 

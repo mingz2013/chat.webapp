@@ -13,11 +13,12 @@ export default class MsgItem extends Component {
 
     }
     render() {
-        const {message, key} = this.props;
+        const {message} = this.props;
         return (
             <div className="message-item">
                 <img className="fl" src="" alt=""/>
-                <div className="message-item-user fl">{message.text}</div>
+                <div className="message-item-user fl">{message.send_from}</div>
+                <div>{message.content}</div>
             </div>
         )
     }
