@@ -5,7 +5,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import {sendChatMessage, changePage, updateUserInfo} from '../../actions/index'
-import {PAGE_MAIN, PAGE_VERIFY} from '../../constants/PageIndex'
+import {PAGE_MAIN, PAGE_VERIFY, PAGE_PROFILE} from '../../constants/PageIndex'
 
 import VerifyPage from '../../components/pages/VerifyPage'
 
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         updateUserInfoFunc: (user) => dispatch(updateUserInfo(user)),
         gotoMainPage: () => dispatch(changePage(PAGE_MAIN)),
-        gotoVerifyPage: () => dispatch(changePage(PAGE_VERIFY))
+        gotoProfilePage: () => dispatch(changePage(PAGE_PROFILE))
     }
 };
 
