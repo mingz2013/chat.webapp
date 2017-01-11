@@ -50237,7 +50237,6 @@
 	        'div',
 	        { className: 'height-init' },
 	        _react2.default.createElement(_App2.default, null),
-	        '//',
 	        _react2.default.createElement(_DevTools2.default, null)
 	    )
 	), document.getElementById('root'));
